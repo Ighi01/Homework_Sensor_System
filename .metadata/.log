@@ -757,3 +757,60 @@ java.lang.Exception: File: C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sen
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-10-14 11:23:43.716
 !MESSAGE Indexed 'HOMEWORK_01' (22 sources, 111 headers) in 1.35 sec: 10,559 declarations; 57,019 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.22%)
+!SESSION 2023-10-14 11:25:51.203 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-14 11:26:00.041
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-14 11:26:00.042
+!MESSAGE Log4j2 initialized with config file C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-14 11:26:09.867
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2023-10-14 11:26:15.365
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39
+!SESSION 2023-10-14 11:26:50.243 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-14 11:26:55.523
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-14 11:26:55.523
+!MESSAGE Log4j2 initialized with config file C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-14 11:27:05.755
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-10-14 11:29:21.947 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-14 11:29:31.247
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-14 11:29:31.249
+!MESSAGE Log4j2 initialized with config file C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-14 11:29:41.550
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-10-14 11:32:03.881
+!MESSAGE Indexed 'HOMEWORK_01' (23 sources, 141 headers) in 4.92 sec: 12,918 declarations; 62,005 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.2%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-10-14 11:32:24.495
+!MESSAGE Indexed '03_class_uart' (22 sources, 111 headers) in 2.35 sec: 10,566 declarations; 57,082 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-10-14 11:32:26.434
+!MESSAGE Indexed '03_hw_lcd' (23 sources, 115 headers) in 1.91 sec: 10,832 declarations; 57,513 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.21%)
