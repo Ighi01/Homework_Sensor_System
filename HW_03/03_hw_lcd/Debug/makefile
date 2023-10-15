@@ -60,8 +60,8 @@ all: main-build
 main-build: 03_hw_lcd.elf secondary-outputs
 
 # Tool invocations
-03_hw_lcd.elf 03_hw_lcd.map: $(OBJS) $(USER_OBJS) /home/stexo/Nextcloud/uni/Polimi/9_Semestre/Sensor_Systems/cubeProjects/03_hw_lcd/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "03_hw_lcd.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/stexo/Nextcloud/uni/Polimi/9_Semestre/Sensor_Systems/cubeProjects/03_hw_lcd/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="03_hw_lcd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+03_hw_lcd.elf 03_hw_lcd.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_03/03_hw_lcd/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "03_hw_lcd.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_03/03_hw_lcd/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="03_hw_lcd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -17,15 +17,11 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
-// SUUUUPER SIUM
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 #include "PMDB16_LCD.h"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,9 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
 #define TEAM_SIZE 5
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -52,11 +46,11 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
-char group[TEAM_SIZE][13] = { "Muhammad",
-					"Genghis Khan",
-					"Jesus",
-					"Marco Polo",
-					"Albert Camus"
+char group[TEAM_SIZE][9] = { "Ignazio",
+							 "Luca_D",
+							 "Leonardo",
+							 "Luca_C",
+							 "Lorenzo"
 };
 
 uint8_t counter = 0;
@@ -127,41 +121,24 @@ int main(void)
   MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
 
-  // Init display
+  // Initialize display
   lcd_initialize();
   lcd_clear();
-  // display first bra
+  // display first name
   lcd_println(group[0], 1);
-
-  // just to et the oportunity to look at the display
+  // just to get the opportunity to look at the display
   HAL_Delay(500);
 
   // Start the Timer10 interrupt (freq = 1 Hz) and check if executed correctly, otherwise call Error_Handler
   if(HAL_TIM_Base_Start_IT(&htim10) != HAL_OK)
 	  Error_Handler();
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  /*
-	  lcd_println("Helloww", 0);
-	  HAL_Delay(1000);
-	  lcd_backlight_OFF();
-	  HAL_Delay(1000);
-	  lcd_backlight_ON();
-
-	  for(uint8_t i = 0; i < 200; i++){
-		  lcd_drawBar(i);
-		  HAL_Delay(500);
-	  }
-	   */
-
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
