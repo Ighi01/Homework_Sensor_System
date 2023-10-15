@@ -45,7 +45,6 @@ TIM_HandleTypeDef htim10;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-
 char group[TEAM_SIZE][9] = { "Ignazio",
 							 "Luca_D",
 							 "Leonardo",
