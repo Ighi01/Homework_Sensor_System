@@ -49,7 +49,7 @@ DMA_HandleTypeDef hdma_usart2_tx;
 
 // buffer to transmit over UART
 // Name and year of birth in this case
-uint8_t buff[] = "Jesus -3\n\r";
+uint8_t buff[] = "Paperino 1903\n";
 
 
 /* USER CODE END PV */
@@ -68,7 +68,7 @@ static void MX_TIM10_Init(void);
 /* USER CODE BEGIN 0 */
 
 
-// Handle elapsed timer and don't give a ### about the interrupt, since it will be resettet by the HAL function
+// Handle elapsed timer and don't care about the interrupt, since it will be resetted by the HAL function
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 	// Check if the timer of interest was triggered
 	if(htim == &htim10){
@@ -80,7 +80,7 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 		if(HAL_UART_GetState(&huart2) == HAL_UART_STATE_READY){
 
 			// Advise DMA to transmit the buffer and check if ok
-			if(HAL_UART_Transmit_DMA(&huart2, buff, sizeof(buff)) != HAL_OK)
+			if(HAL_UART_Transmit_DMA(&huart2, buff, strlen(buff)) != HAL_OK)
 				Error_Handler();
 
 			// Restart the one second timer and check if executed correctly
@@ -131,14 +131,12 @@ int main(void)
   if(HAL_TIM_Base_Start_IT(&htim10) != HAL_OK)
 	  Error_Handler();
 
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
