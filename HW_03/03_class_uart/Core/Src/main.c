@@ -21,7 +21,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,8 +49,6 @@ DMA_HandleTypeDef hdma_usart2_tx;
 // buffer to transmit over UART
 // Name and year of birth in this case
 uint8_t buff[] = "Paperino 1903\n";
-
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,8 +76,8 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 		// Check if DMA is ready for transmitting data again
 		if(HAL_UART_GetState(&huart2) == HAL_UART_STATE_READY){
 
-			// Advise DMA to transmit the buffer and check if ok
-			if(HAL_UART_Transmit_DMA(&huart2, buff, strlen(buff)) != HAL_OK)
+			// Advise DMA to transmit the buffer and check if ok. -1 is to account for the termination byte
+			if(HAL_UART_Transmit_DMA(&huart2, buff, sizeof(buff)-1) != HAL_OK)
 				Error_Handler();
 
 			// Restart the one second timer and check if executed correctly

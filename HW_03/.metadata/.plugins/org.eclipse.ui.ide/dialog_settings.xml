@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_03/03_hw_lcd"/>
 			<item value="/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_03/03_class_uart"/>
 		</list>
 	</section>
