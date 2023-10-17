@@ -1,0 +1,34 @@
+18:40:47 **** Incremental Build of configuration Debug for project HW_04_2b ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:68:36: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+   68 |         HAL_UART_Transmit(&huart2, buff, length, 100);
+      |                                    ^~~~
+      |                                    |
+      |                                    char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "HW_04_2b.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_04/HW_04_2b/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_04_2b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW_04_2b.elf
+ 
+arm-none-eabi-size   HW_04_2b.elf 
+arm-none-eabi-objdump -h -S  HW_04_2b.elf  > "HW_04_2b.list"
+   text	   data	    bss	    dec	    hex	filename
+  28936	    476	   2148	  31560	   7b48	HW_04_2b.elf
+Finished building: default.size.stdout
+ 
+Finished building: HW_04_2b.list
+ 
+18:40:57 **** Incremental Build of configuration Debug for project HW_04_2b ****
+make -j12 all 
+arm-none-eabi-size   HW_04_2b.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28936	    476	   2148	  31560	   7b48	HW_04_2b.elf
+Finished building: default.size.stdout
+ 
