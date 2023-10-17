@@ -121,6 +121,7 @@ int main(void)
   //start the ADC in interrupt mode
   if(HAL_ADC_Start_IT(&hadc1) != HAL_OK)
 	  Error_Handler();
+
   //start the 0.2s timer (as suggested in the slides)
   if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1)!= HAL_OK)
   	  Error_Handler();

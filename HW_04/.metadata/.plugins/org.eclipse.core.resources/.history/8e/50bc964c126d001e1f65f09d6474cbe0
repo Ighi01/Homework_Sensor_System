@@ -62,12 +62,9 @@ static void MX_ADC1_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
-	//get ADC value
 	adc_val = HAL_ADC_GetValue(&hadc1);
-	//convert it in the 0-3.3 range in float
 	value_volt = adc_val*3.3/4096.0;
 	length = snprintf(buff, sizeof(buff),"Voltage: %.3f V\r\n",value_volt);
-	//send the buff over UART
 	HAL_UART_Transmit(&huart2, buff, length, 100);
 };
 /* USER CODE END PFP */
@@ -109,12 +106,9 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
-  //start the ADC in interrupt mode
   if(HAL_ADC_Start_IT(&hadc1) != HAL_OK)
 	  Error_Handler();
 
-  //start the 1s timer, when it ends counting, it will trigger the ADC interrupt
   if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1) != HAL_OK)
 	  Error_Handler();
   /* USER CODE END 2 */
