@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002022c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000ec3e  00000000  00000000  0002026f  2**0
+ 13 .debug_info   0000ebfc  00000000  00000000  0002026f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 000021d5  00000000  00000000  0002eead  2**0
+ 14 .debug_abbrev 000021bd  00000000  00000000  0002ee6b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000e60  00000000  00000000  00031088  2**3
+ 15 .debug_aranges 00000e60  00000000  00000000  00031028  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000b36  00000000  00000000  00031ee8  2**0
+ 16 .debug_rnglists 00000b36  00000000  00000000  00031e88  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00018818  00000000  00000000  00032a1e  2**0
+ 17 .debug_macro  0001888f  00000000  00000000  000329be  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000febe  00000000  00000000  0004b236  2**0
+ 18 .debug_line   0000ff01  00000000  00000000  0004b24d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0009aeb6  00000000  00000000  0005b0f4  2**0
+ 19 .debug_str    0009aeb6  00000000  00000000  0005b14e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00004de0  00000000  00000000  000f5fac  2**2
+ 20 .debug_frame  00004de0  00000000  00000000  000f6004  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000079  00000000  00000000  000fad8c  2**0
+ 21 .debug_line_str 00000079  00000000  00000000  000fade4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2022,12 +2022,14 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  800142a:	b084      	sub	sp, #16
  800142c:	af02      	add	r7, sp, #8
  800142e:	6078      	str	r0, [r7, #4]
+	//get ADC value
 	adc_val = HAL_ADC_GetValue(&hadc1);
  8001430:	4827      	ldr	r0, [pc, #156]	; (80014d0 <HAL_ADC_ConvCpltCallback+0xa8>)
  8001432:	f000 ff09 	bl	8002248 <HAL_ADC_GetValue>
  8001436:	4603      	mov	r3, r0
  8001438:	4a26      	ldr	r2, [pc, #152]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800143a:	6013      	str	r3, [r2, #0]
+	//convert it in the 0-3.3 range in float
 	value_volt = adc_val*3.3/4096.0;
  800143c:	4b25      	ldr	r3, [pc, #148]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800143e:	681b      	ldr	r3, [r3, #0]
@@ -2068,6 +2070,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  8001494:	4b14      	ldr	r3, [pc, #80]	; (80014e8 <HAL_ADC_ConvCpltCallback+0xc0>)
  8001496:	701a      	strb	r2, [r3, #0]
 
+	//convert the ADC value in a value between 0 to 80 for the bar graph
 	bar_val = (adc_val * 80)/4096;
  8001498:	4b0e      	ldr	r3, [pc, #56]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800149a:	681a      	ldr	r2, [r3, #0]
@@ -2079,6 +2082,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  80014a6:	b2da      	uxtb	r2, r3
  80014a8:	4b10      	ldr	r3, [pc, #64]	; (80014ec <HAL_ADC_ConvCpltCallback+0xc4>)
  80014aa:	701a      	strb	r2, [r3, #0]
+	//print the value on the LCD
 	lcd_println(buff,0);
  80014ac:	2100      	movs	r1, #0
  80014ae:	480d      	ldr	r0, [pc, #52]	; (80014e4 <HAL_ADC_ConvCpltCallback+0xbc>)
@@ -2142,11 +2146,14 @@ int main(void)
   MX_TIM2_Init();
  8001508:	f000 f8d8 	bl	80016bc <MX_TIM2_Init>
   /* USER CODE BEGIN 2 */
+
+  //initialize the LCD
   lcd_initialize();
  800150c:	f7ff ff36 	bl	800137c <lcd_initialize>
   lcd_clear();
  8001510:	f7ff fdf2 	bl	80010f8 <lcd_clear>
 
+  //start the ADC in interrupt mode
   if(HAL_ADC_Start_IT(&hadc1) != HAL_OK)
  8001514:	4808      	ldr	r0, [pc, #32]	; (8001538 <main+0x48>)
  8001516:	f000 fcc9 	bl	8001eac <HAL_ADC_Start_IT>
@@ -2156,6 +2163,7 @@ int main(void)
 	  Error_Handler();
  8001520:	f000 f9d2 	bl	80018c8 <Error_Handler>
 
+  //start the 0.2s timer (as suggested in the slides)
   if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1)!= HAL_OK)
  8001524:	2100      	movs	r1, #0
  8001526:	4805      	ldr	r0, [pc, #20]	; (800153c <main+0x4c>)

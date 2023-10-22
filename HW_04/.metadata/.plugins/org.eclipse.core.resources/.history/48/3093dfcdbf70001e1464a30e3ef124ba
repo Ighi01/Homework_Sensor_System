@@ -21,7 +21,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "PMDB16_LCD.h"
 #include "stdio.h"
 /* USER CODE END Includes */
 
@@ -69,7 +68,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
 	value_volt = adc_val*3.3/4096.0;
 	length = snprintf(buff, sizeof(buff),"Voltage: %.3f V\r\n",value_volt);
 
-	//convert the ADC value in a value between 0 to 80 for the bar graph
+	//convert the ADC value in a value between 0 to 80 for the bargraph
 	bar_val = (adc_val * 80)/4096;
 	//print the value on the LCD
 	lcd_println(buff,0);
