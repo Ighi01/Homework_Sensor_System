@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3167e2f-aa5c-46d6-b972-074c9c660c45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.ide.log-2023-10-17.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.ide.log-2023-10-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.ui/dialog_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.history/48/3093dfcdbf70001e1464a30e3ef124ba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2b/.markers.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2b/.syncinfo.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.markers.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.syncinfo.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/3.tree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/3.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.runtime/.settings/com.st.stm32cube.common.preferences.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.dsf.ui.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../.~lock.Group_A5_HW4.odt#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.ide.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.ide.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.core/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.core/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.core/HW_04_2c.1697561213653.pdom" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.core/HW_04_2c.1697561213653.pdom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.ui/HW_04_2c.build.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.ui/HW_04_2c.build.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.ui/global-build.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.cdt.ui/global-build.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2b/.indexes/bf/c4/history.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2b/.indexes/bf/c4/history.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2b/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.projects/HW_04_2c/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.resources/1.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.cdt.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.metadata/version.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Group_A5_HW4.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Group_A5_HW4.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Core/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.d" beforeDir="false" afterPath="$PROJECT_DIR$/main.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW_04_2c.elf" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW_04_2c.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW_04_2c.list" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW_04_2c.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HW_04_2c.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW_04_2c.map" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2XAtCzedk3LWqHKU2SfEqDFsHlk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging main",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\ignaI\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\ignaI\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\ignaI\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3167e2f-aa5c-46d6-b972-074c9c660c45" name="Changes" comment="" />
+      <created>1698083590736</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698083590736</updated>
+      <workItem from="1698083593255" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
