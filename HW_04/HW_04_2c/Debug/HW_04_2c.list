@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002022c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000ec3e  00000000  00000000  0002026f  2**0
+ 13 .debug_info   0000ec0a  00000000  00000000  0002026f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 000021d5  00000000  00000000  0002eead  2**0
+ 14 .debug_abbrev 000021bd  00000000  00000000  0002ee79  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000e60  00000000  00000000  00031088  2**3
+ 15 .debug_aranges 00000e60  00000000  00000000  00031038  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000b36  00000000  00000000  00031ee8  2**0
+ 16 .debug_rnglists 00000b36  00000000  00000000  00031e98  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00018818  00000000  00000000  00032a1e  2**0
+ 17 .debug_macro  00018aae  00000000  00000000  000329ce  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000febe  00000000  00000000  0004b236  2**0
+ 18 .debug_line   00010e17  00000000  00000000  0004b47c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0009aeb6  00000000  00000000  0005b0f4  2**0
+ 19 .debug_str    0009aeba  00000000  00000000  0005c293  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00004de0  00000000  00000000  000f5fac  2**2
+ 20 .debug_frame  00004de0  00000000  00000000  000f7150  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000079  00000000  00000000  000fad8c  2**0
+ 21 .debug_line_str 0000007d  00000000  00000000  000fbf30  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -775,7 +775,7 @@ Disassembly of section .text:
  8000a2a:	e712      	b.n	8000852 <__aeabi_dmul+0x24a>
 
 08000a2c <__gedf2>:
- 8000a2c:	f04f 3cff 	mov.w	ip, #4294967295	; 0xffffffff
+ 8000a2c:	f04f 3cff 	mov.w	ip, #4294967295
  8000a30:	e006      	b.n	8000a40 <__cmpdf2+0x4>
  8000a32:	bf00      	nop
 
@@ -990,8 +990,8 @@ Disassembly of section .text:
  8000c5e:	bf08      	it	eq
  8000c60:	2800      	cmpeq	r0, #0
  8000c62:	bf1c      	itt	ne
- 8000c64:	f04f 31ff 	movne.w	r1, #4294967295	; 0xffffffff
- 8000c68:	f04f 30ff 	movne.w	r0, #4294967295	; 0xffffffff
+ 8000c64:	f04f 31ff 	movne.w	r1, #4294967295
+ 8000c68:	f04f 30ff 	movne.w	r0, #4294967295
  8000c6c:	f000 b970 	b.w	8000f50 <__aeabi_idiv0>
  8000c70:	f1ad 0c08 	sub.w	ip, sp, #8
  8000c74:	e96d ce04 	strd	ip, lr, [sp, #-16]!
@@ -1030,7 +1030,7 @@ Disassembly of section .text:
  8000cd0:	4290      	cmp	r0, r2
  8000cd2:	d90a      	bls.n	8000cea <__udivmoddi4+0x62>
  8000cd4:	eb1c 0202 	adds.w	r2, ip, r2
- 8000cd8:	f101 37ff 	add.w	r7, r1, #4294967295	; 0xffffffff
+ 8000cd8:	f101 37ff 	add.w	r7, r1, #4294967295
  8000cdc:	f080 811c 	bcs.w	8000f18 <__udivmoddi4+0x290>
  8000ce0:	4290      	cmp	r0, r2
  8000ce2:	f240 8119 	bls.w	8000f18 <__udivmoddi4+0x290>
@@ -1045,7 +1045,7 @@ Disassembly of section .text:
  8000cfe:	42a5      	cmp	r5, r4
  8000d00:	d90a      	bls.n	8000d18 <__udivmoddi4+0x90>
  8000d02:	eb1c 0404 	adds.w	r4, ip, r4
- 8000d06:	f100 32ff 	add.w	r2, r0, #4294967295	; 0xffffffff
+ 8000d06:	f100 32ff 	add.w	r2, r0, #4294967295
  8000d0a:	f080 8107 	bcs.w	8000f1c <__udivmoddi4+0x294>
  8000d0e:	42a5      	cmp	r5, r4
  8000d10:	f240 8104 	bls.w	8000f1c <__udivmoddi4+0x294>
@@ -1099,7 +1099,7 @@ Disassembly of section .text:
  8000d96:	4290      	cmp	r0, r2
  8000d98:	d908      	bls.n	8000dac <__udivmoddi4+0x124>
  8000d9a:	eb1c 0202 	adds.w	r2, ip, r2
- 8000d9e:	f105 38ff 	add.w	r8, r5, #4294967295	; 0xffffffff
+ 8000d9e:	f105 38ff 	add.w	r8, r5, #4294967295
  8000da2:	d202      	bcs.n	8000daa <__udivmoddi4+0x122>
  8000da4:	4290      	cmp	r0, r2
  8000da6:	f200 80cb 	bhi.w	8000f40 <__udivmoddi4+0x2b8>
@@ -1113,7 +1113,7 @@ Disassembly of section .text:
  8000dc0:	45a6      	cmp	lr, r4
  8000dc2:	d908      	bls.n	8000dd6 <__udivmoddi4+0x14e>
  8000dc4:	eb1c 0404 	adds.w	r4, ip, r4
- 8000dc8:	f100 32ff 	add.w	r2, r0, #4294967295	; 0xffffffff
+ 8000dc8:	f100 32ff 	add.w	r2, r0, #4294967295
  8000dcc:	d202      	bcs.n	8000dd4 <__udivmoddi4+0x14c>
  8000dce:	45a6      	cmp	lr, r4
  8000dd0:	f200 80bb 	bhi.w	8000f4a <__udivmoddi4+0x2c2>
@@ -1141,7 +1141,7 @@ Disassembly of section .text:
  8000e1a:	fa00 f001 	lsl.w	r0, r0, r1
  8000e1e:	d90b      	bls.n	8000e38 <__udivmoddi4+0x1b0>
  8000e20:	eb1c 0404 	adds.w	r4, ip, r4
- 8000e24:	f108 3aff 	add.w	sl, r8, #4294967295	; 0xffffffff
+ 8000e24:	f108 3aff 	add.w	sl, r8, #4294967295
  8000e28:	f080 8088 	bcs.w	8000f3c <__udivmoddi4+0x2b4>
  8000e2c:	42a5      	cmp	r5, r4
  8000e2e:	f240 8085 	bls.w	8000f3c <__udivmoddi4+0x2b4>
@@ -1156,7 +1156,7 @@ Disassembly of section .text:
  8000e4c:	45a6      	cmp	lr, r4
  8000e4e:	d908      	bls.n	8000e62 <__udivmoddi4+0x1da>
  8000e50:	eb1c 0404 	adds.w	r4, ip, r4
- 8000e54:	f103 35ff 	add.w	r5, r3, #4294967295	; 0xffffffff
+ 8000e54:	f103 35ff 	add.w	r5, r3, #4294967295
  8000e58:	d26c      	bcs.n	8000f34 <__udivmoddi4+0x2ac>
  8000e5a:	45a6      	cmp	lr, r4
  8000e5c:	d96a      	bls.n	8000f34 <__udivmoddi4+0x2ac>
@@ -1198,7 +1198,7 @@ Disassembly of section .text:
  8000ec8:	fa04 f403 	lsl.w	r4, r4, r3
  8000ecc:	d908      	bls.n	8000ee0 <__udivmoddi4+0x258>
  8000ece:	eb1c 0101 	adds.w	r1, ip, r1
- 8000ed2:	f100 38ff 	add.w	r8, r0, #4294967295	; 0xffffffff
+ 8000ed2:	f100 38ff 	add.w	r8, r0, #4294967295
  8000ed6:	d22f      	bcs.n	8000f38 <__udivmoddi4+0x2b0>
  8000ed8:	428d      	cmp	r5, r1
  8000eda:	d92d      	bls.n	8000f38 <__udivmoddi4+0x2b0>
@@ -1213,7 +1213,7 @@ Disassembly of section .text:
  8000ef4:	4291      	cmp	r1, r2
  8000ef6:	d908      	bls.n	8000f0a <__udivmoddi4+0x282>
  8000ef8:	eb1c 0202 	adds.w	r2, ip, r2
- 8000efc:	f105 38ff 	add.w	r8, r5, #4294967295	; 0xffffffff
+ 8000efc:	f105 38ff 	add.w	r8, r5, #4294967295
  8000f00:	d216      	bcs.n	8000f30 <__udivmoddi4+0x2a8>
  8000f02:	4291      	cmp	r1, r2
  8000f04:	d914      	bls.n	8000f30 <__udivmoddi4+0x2a8>
@@ -2022,12 +2022,14 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  800142a:	b084      	sub	sp, #16
  800142c:	af02      	add	r7, sp, #8
  800142e:	6078      	str	r0, [r7, #4]
+	//get ADC value
 	adc_val = HAL_ADC_GetValue(&hadc1);
  8001430:	4827      	ldr	r0, [pc, #156]	; (80014d0 <HAL_ADC_ConvCpltCallback+0xa8>)
  8001432:	f000 ff09 	bl	8002248 <HAL_ADC_GetValue>
  8001436:	4603      	mov	r3, r0
  8001438:	4a26      	ldr	r2, [pc, #152]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800143a:	6013      	str	r3, [r2, #0]
+	//convert it in the 0-3.3 range in float
 	value_volt = adc_val*3.3/4096.0;
  800143c:	4b25      	ldr	r3, [pc, #148]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800143e:	681b      	ldr	r3, [r3, #0]
@@ -2068,6 +2070,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  8001494:	4b14      	ldr	r3, [pc, #80]	; (80014e8 <HAL_ADC_ConvCpltCallback+0xc0>)
  8001496:	701a      	strb	r2, [r3, #0]
 
+	//convert the ADC value in a value between 0 to 80 for the bargraph
 	bar_val = (adc_val * 80)/4096;
  8001498:	4b0e      	ldr	r3, [pc, #56]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800149a:	681a      	ldr	r2, [r3, #0]
@@ -2079,6 +2082,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  80014a6:	b2da      	uxtb	r2, r3
  80014a8:	4b10      	ldr	r3, [pc, #64]	; (80014ec <HAL_ADC_ConvCpltCallback+0xc4>)
  80014aa:	701a      	strb	r2, [r3, #0]
+	//print the value on the LCD
 	lcd_println(buff,0);
  80014ac:	2100      	movs	r1, #0
  80014ae:	480d      	ldr	r0, [pc, #52]	; (80014e4 <HAL_ADC_ConvCpltCallback+0xbc>)
@@ -2142,11 +2146,14 @@ int main(void)
   MX_TIM2_Init();
  8001508:	f000 f8d8 	bl	80016bc <MX_TIM2_Init>
   /* USER CODE BEGIN 2 */
+
+  //initialize the LCD
   lcd_initialize();
  800150c:	f7ff ff36 	bl	800137c <lcd_initialize>
   lcd_clear();
  8001510:	f7ff fdf2 	bl	80010f8 <lcd_clear>
 
+  //start the ADC in interrupt mode
   if(HAL_ADC_Start_IT(&hadc1) != HAL_OK)
  8001514:	4808      	ldr	r0, [pc, #32]	; (8001538 <main+0x48>)
  8001516:	f000 fcc9 	bl	8001eac <HAL_ADC_Start_IT>
@@ -2156,6 +2163,7 @@ int main(void)
 	  Error_Handler();
  8001520:	f000 f9d2 	bl	80018c8 <Error_Handler>
 
+  //start the 0.2s timer (as suggested in the slides)
   if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1)!= HAL_OK)
  8001524:	2100      	movs	r1, #0
  8001526:	4805      	ldr	r0, [pc, #20]	; (800153c <main+0x4c>)
@@ -3319,7 +3327,7 @@ int _kill(int pid, int sig)
  8001b14:	2216      	movs	r2, #22
  8001b16:	601a      	str	r2, [r3, #0]
   return -1;
- 8001b18:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8001b18:	f04f 33ff 	mov.w	r3, #4294967295
 }
  8001b1c:	4618      	mov	r0, r3
  8001b1e:	3708      	adds	r7, #8
@@ -3335,7 +3343,7 @@ void _exit (int status)
  8001b28:	af00      	add	r7, sp, #0
  8001b2a:	6078      	str	r0, [r7, #4]
   _kill(status, -1);
- 8001b2c:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 8001b2c:	f04f 31ff 	mov.w	r1, #4294967295
  8001b30:	6878      	ldr	r0, [r7, #4]
  8001b32:	f7ff ffe7 	bl	8001b04 <_kill>
   while (1) {}    /* Make sure we hang here */
@@ -3438,7 +3446,7 @@ int _close(int file)
  8001bb0:	6078      	str	r0, [r7, #4]
   (void)file;
   return -1;
- 8001bb2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8001bb2:	f04f 33ff 	mov.w	r3, #4294967295
 }
  8001bb6:	4618      	mov	r0, r3
  8001bb8:	370c      	adds	r7, #12
@@ -3564,7 +3572,7 @@ void *_sbrk(ptrdiff_t incr)
  8001c4a:	220c      	movs	r2, #12
  8001c4c:	601a      	str	r2, [r3, #0]
     return (void *)-1;
- 8001c4e:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8001c4e:	f04f 33ff 	mov.w	r3, #4294967295
  8001c52:	e009      	b.n	8001c68 <_sbrk+0x54>
   }
 
@@ -3824,7 +3832,7 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
     HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
  8001d70:	2200      	movs	r2, #0
  8001d72:	6879      	ldr	r1, [r7, #4]
- 8001d74:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8001d74:	f04f 30ff 	mov.w	r0, #4294967295
  8001d78:	f000 fd8b 	bl	8002892 <HAL_NVIC_SetPriority>
     uwTickPrio = TickPriority;
  8001d7c:	4a06      	ldr	r2, [pc, #24]	; (8001d98 <HAL_InitTick+0x5c>)
@@ -3917,7 +3925,7 @@ __weak void HAL_Delay(uint32_t Delay)
   /* Add a freq to guarantee minimum wait */
   if (wait < HAL_MAX_DELAY)
  8001dee:	68fb      	ldr	r3, [r7, #12]
- 8001df0:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
+ 8001df0:	f1b3 3fff 	cmp.w	r3, #4294967295
  8001df4:	d005      	beq.n	8001e02 <HAL_Delay+0x26>
   {
     wait += (uint32_t)(uwTickFreq);
@@ -5725,7 +5733,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
 
   return (
            ((PreemptPriority & (uint32_t)((1UL << (PreemptPriorityBits)) - 1UL)) << SubPriorityBits) |
- 8002804:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8002804:	f04f 32ff 	mov.w	r2, #4294967295
  8002808:	69bb      	ldr	r3, [r7, #24]
  800280a:	fa02 f303 	lsl.w	r3, r2, r3
  800280e:	43da      	mvns	r2, r3
@@ -5734,7 +5742,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
  8002814:	697b      	ldr	r3, [r7, #20]
  8002816:	409a      	lsls	r2, r3
            ((SubPriority     & (uint32_t)((1UL << (SubPriorityBits    )) - 1UL)))
- 8002818:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 8002818:	f04f 31ff 	mov.w	r1, #4294967295
  800281c:	697b      	ldr	r3, [r7, #20]
  800281e:	fa01 f303 	lsl.w	r3, r1, r3
  8002822:	43d9      	mvns	r1, r3
@@ -5780,7 +5788,7 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
  8002854:	6053      	str	r3, [r2, #4]
   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
  8002856:	210f      	movs	r1, #15
- 8002858:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8002858:	f04f 30ff 	mov.w	r0, #4294967295
  800285c:	f7ff ff8e 	bl	800277c <__NVIC_SetPriority>
   SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Value */
  8002860:	4b05      	ldr	r3, [pc, #20]	; (8002878 <SysTick_Config+0x40>)
@@ -10287,7 +10295,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80044a6:	f80c 4c01 	strb.w	r4, [ip, #-1]
  80044aa:	460c      	mov	r4, r1
  80044ac:	2c63      	cmp	r4, #99	; 0x63
- 80044ae:	f102 32ff 	add.w	r2, r2, #4294967295	; 0xffffffff
+ 80044ae:	f102 32ff 	add.w	r2, r2, #4294967295
  80044b2:	4629      	mov	r1, r5
  80044b4:	dcf1      	bgt.n	800449a <__exponent+0x22>
  80044b6:	3130      	adds	r1, #48	; 0x30
@@ -10347,12 +10355,12 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8004548:	e9c4 8912 	strd	r8, r9, [r4, #72]	; 0x48
  800454c:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
  8004550:	4b9e      	ldr	r3, [pc, #632]	; (80047cc <_printf_float+0x2d8>)
- 8004552:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8004552:	f04f 32ff 	mov.w	r2, #4294967295
  8004556:	f7fc faf1 	bl	8000b3c <__aeabi_dcmpun>
  800455a:	bb88      	cbnz	r0, 80045c0 <_printf_float+0xcc>
  800455c:	e9dd 0106 	ldrd	r0, r1, [sp, #24]
  8004560:	4b9a      	ldr	r3, [pc, #616]	; (80047cc <_printf_float+0x2d8>)
- 8004562:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8004562:	f04f 32ff 	mov.w	r2, #4294967295
  8004566:	f7fc facb 	bl	8000b00 <__aeabi_dcmple>
  800456a:	bb48      	cbnz	r0, 80045c0 <_printf_float+0xcc>
  800456c:	2200      	movs	r2, #0
@@ -10383,7 +10391,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80045a8:	f000 f9da 	bl	8004960 <_printf_common>
  80045ac:	3001      	adds	r0, #1
  80045ae:	f040 8090 	bne.w	80046d2 <_printf_float+0x1de>
- 80045b2:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 80045b2:	f04f 30ff 	mov.w	r0, #4294967295
  80045b6:	b00d      	add	sp, #52	; 0x34
  80045b8:	ecbd 8b02 	vpop	{d8}
  80045bc:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
@@ -10723,7 +10731,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80048e4:	f8dd a028 	ldr.w	sl, [sp, #40]	; 0x28
  80048e8:	f7fc f8f6 	bl	8000ad8 <__aeabi_dcmpeq>
  80048ec:	b9d8      	cbnz	r0, 8004926 <_printf_float+0x432>
- 80048ee:	f10a 33ff 	add.w	r3, sl, #4294967295	; 0xffffffff
+ 80048ee:	f10a 33ff 	add.w	r3, sl, #4294967295
  80048f2:	f108 0201 	add.w	r2, r8, #1
  80048f6:	4631      	mov	r1, r6
  80048f8:	4628      	mov	r0, r5
@@ -10844,7 +10852,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80049fe:	47c0      	blx	r8
  8004a00:	3001      	adds	r0, #1
  8004a02:	d103      	bne.n	8004a0c <_printf_common+0xac>
- 8004a04:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8004a04:	f04f 30ff 	mov.w	r0, #4294967295
  8004a08:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  8004a0c:	3501      	adds	r5, #1
  8004a0e:	e7c6      	b.n	800499e <_printf_common+0x3e>
@@ -10990,7 +10998,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8004b78:	bfde      	ittt	le
  8004b7a:	2330      	movle	r3, #48	; 0x30
  8004b7c:	f805 3c01 	strble.w	r3, [r5, #-1]
- 8004b80:	f105 35ff 	addle.w	r5, r5, #4294967295	; 0xffffffff
+ 8004b80:	f105 35ff 	addle.w	r5, r5, #4294967295
  8004b84:	1b52      	subs	r2, r2, r5
  8004b86:	6122      	str	r2, [r4, #16]
  8004b88:	f8cd a000 	str.w	sl, [sp]
@@ -11001,7 +11009,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8004b94:	f7ff fee4 	bl	8004960 <_printf_common>
  8004b98:	3001      	adds	r0, #1
  8004b9a:	d14a      	bne.n	8004c32 <_printf_i+0x1f6>
- 8004b9c:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8004b9c:	f04f 30ff 	mov.w	r0, #4294967295
  8004ba0:	b004      	add	sp, #16
  8004ba2:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  8004ba6:	6823      	ldr	r3, [r4, #0]
@@ -11264,7 +11272,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8004dec:	da08      	bge.n	8004e00 <sniprintf+0x20>
  8004dee:	238b      	movs	r3, #139	; 0x8b
  8004df0:	602b      	str	r3, [r5, #0]
- 8004df2:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8004df2:	f04f 30ff 	mov.w	r0, #4294967295
  8004df6:	b01d      	add	sp, #116	; 0x74
  8004df8:	e8bd 4030 	ldmia.w	sp!, {r4, r5, lr}
  8004dfc:	b002      	add	sp, #8
@@ -11272,7 +11280,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8004e00:	f44f 7302 	mov.w	r3, #520	; 0x208
  8004e04:	f8ad 3014 	strh.w	r3, [sp, #20]
  8004e08:	bf14      	ite	ne
- 8004e0a:	f104 33ff 	addne.w	r3, r4, #4294967295	; 0xffffffff
+ 8004e0a:	f104 33ff 	addne.w	r3, r4, #4294967295
  8004e0e:	4623      	moveq	r3, r4
  8004e10:	9304      	str	r3, [sp, #16]
  8004e12:	9307      	str	r3, [sp, #28]
@@ -11740,7 +11748,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8005264:	463b      	mov	r3, r7
  8005266:	f7fb fc37 	bl	8000ad8 <__aeabi_dcmpeq>
  800526a:	b908      	cbnz	r0, 8005270 <_dtoa_r+0x190>
- 800526c:	f10b 3bff 	add.w	fp, fp, #4294967295	; 0xffffffff
+ 800526c:	f10b 3bff 	add.w	fp, fp, #4294967295
  8005270:	f1bb 0f16 	cmp.w	fp, #22
  8005274:	d857      	bhi.n	8005326 <_dtoa_r+0x246>
  8005276:	4b5b      	ldr	r3, [pc, #364]	; (80053e4 <_dtoa_r+0x304>)
@@ -11750,7 +11758,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8005284:	f7fb fc32 	bl	8000aec <__aeabi_dcmplt>
  8005288:	2800      	cmp	r0, #0
  800528a:	d04e      	beq.n	800532a <_dtoa_r+0x24a>
- 800528c:	f10b 3bff 	add.w	fp, fp, #4294967295	; 0xffffffff
+ 800528c:	f10b 3bff 	add.w	fp, fp, #4294967295
  8005290:	2300      	movs	r3, #0
  8005292:	930c      	str	r3, [sp, #48]	; 0x30
  8005294:	9b10      	ldr	r3, [sp, #64]	; 0x40
@@ -11866,7 +11874,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  800539c:	2300      	movs	r3, #0
  800539e:	9307      	str	r3, [sp, #28]
  80053a0:	9509      	str	r5, [sp, #36]	; 0x24
- 80053a2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 80053a2:	f04f 33ff 	mov.w	r3, #4294967295
  80053a6:	9301      	str	r3, [sp, #4]
  80053a8:	9304      	str	r3, [sp, #16]
  80053aa:	2200      	movs	r2, #0
@@ -11985,7 +11993,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80054ee:	f7fb f88b 	bl	8000608 <__aeabi_dmul>
  80054f2:	e9cd 0102 	strd	r0, r1, [sp, #8]
  80054f6:	9e01      	ldr	r6, [sp, #4]
- 80054f8:	f10b 37ff 	add.w	r7, fp, #4294967295	; 0xffffffff
+ 80054f8:	f10b 37ff 	add.w	r7, fp, #4294967295
  80054fc:	3501      	adds	r5, #1
  80054fe:	e9dd 8902 	ldrd	r8, r9, [sp, #8]
  8005502:	4628      	mov	r0, r5
@@ -12408,7 +12416,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8005932:	4620      	mov	r0, r4
  8005934:	f000 fb28 	bl	8005f88 <__multadd>
  8005938:	9b09      	ldr	r3, [sp, #36]	; 0x24
- 800593a:	f10b 3bff 	add.w	fp, fp, #4294967295	; 0xffffffff
+ 800593a:	f10b 3bff 	add.w	fp, fp, #4294967295
  800593e:	4682      	mov	sl, r0
  8005940:	2b00      	cmp	r3, #0
  8005942:	f000 81b0 	beq.w	8005ca6 <_dtoa_r+0xbc6>
@@ -12890,7 +12898,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8005d98:	f000 fe30 	bl	80069fc <_sbrk_r>
  8005d9c:	3001      	adds	r0, #1
  8005d9e:	d101      	bne.n	8005da4 <sbrk_aligned+0x38>
- 8005da0:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 8005da0:	f04f 34ff 	mov.w	r4, #4294967295
  8005da4:	4620      	mov	r0, r4
  8005da6:	bd70      	pop	{r4, r5, r6, pc}
  8005da8:	20000470 	.word	0x20000470
@@ -13541,7 +13549,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80063e8:	4283      	cmp	r3, r0
  80063ea:	d3f3      	bcc.n	80063d4 <__mcmp+0x18>
  80063ec:	e7fa      	b.n	80063e4 <__mcmp+0x28>
- 80063ee:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 80063ee:	f04f 32ff 	mov.w	r2, #4294967295
  80063f2:	e7f7      	b.n	80063e4 <__mcmp+0x28>
 
 080063f4 <__mdiff>:
@@ -13788,7 +13796,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006662:	89a3      	ldrh	r3, [r4, #12]
  8006664:	f043 0340 	orr.w	r3, r3, #64	; 0x40
  8006668:	81a3      	strh	r3, [r4, #12]
- 800666a:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800666a:	f04f 30ff 	mov.w	r0, #4294967295
  800666e:	e7e9      	b.n	8006644 <__ssputs_r+0x88>
 
 08006670 <_svfiprintf_r>:
@@ -13810,7 +13818,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006692:	b920      	cbnz	r0, 800669e <_svfiprintf_r+0x2e>
  8006694:	230c      	movs	r3, #12
  8006696:	603b      	str	r3, [r7, #0]
- 8006698:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8006698:	f04f 30ff 	mov.w	r0, #4294967295
  800669c:	e0d0      	b.n	8006840 <_svfiprintf_r+0x1d0>
  800669e:	2340      	movs	r3, #64	; 0x40
  80066a0:	616b      	str	r3, [r5, #20]
@@ -13845,7 +13853,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80066ee:	2b00      	cmp	r3, #0
  80066f0:	f000 80a1 	beq.w	8006836 <_svfiprintf_r+0x1c6>
  80066f4:	2300      	movs	r3, #0
- 80066f6:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 80066f6:	f04f 32ff 	mov.w	r2, #4294967295
  80066fa:	e9cd 2305 	strd	r2, r3, [sp, #20]
  80066fe:	f10a 0a01 	add.w	sl, sl, #1
  8006702:	9304      	str	r3, [sp, #16]
@@ -13912,7 +13920,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006792:	9203      	str	r2, [sp, #12]
  8006794:	2b00      	cmp	r3, #0
  8006796:	bfb8      	it	lt
- 8006798:	f04f 33ff 	movlt.w	r3, #4294967295	; 0xffffffff
+ 8006798:	f04f 33ff 	movlt.w	r3, #4294967295
  800679c:	3402      	adds	r4, #2
  800679e:	9305      	str	r3, [sp, #20]
  80067a0:	f8df a0c4 	ldr.w	sl, [pc, #196]	; 8006868 <_svfiprintf_r+0x1f8>
@@ -14114,7 +14122,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  800695c:	89a3      	ldrh	r3, [r4, #12]
  800695e:	f043 0340 	orr.w	r3, r3, #64	; 0x40
  8006962:	81a3      	strh	r3, [r4, #12]
- 8006964:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8006964:	f04f 30ff 	mov.w	r0, #4294967295
  8006968:	e78e      	b.n	8006888 <__sflush_r+0x1c>
  800696a:	4407      	add	r7, r0
  800696c:	eba8 0800 	sub.w	r8, r8, r0
@@ -14201,7 +14209,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
 08006a1c <memcpy>:
  8006a1c:	440a      	add	r2, r1
  8006a1e:	4291      	cmp	r1, r2
- 8006a20:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
+ 8006a20:	f100 33ff 	add.w	r3, r0, #4294967295
  8006a24:	d100      	bne.n	8006a28 <memcpy+0xc>
  8006a26:	4770      	bx	lr
  8006a28:	b510      	push	{r4, lr}
@@ -14322,7 +14330,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006b28:	238a      	movhi	r3, #138	; 0x8a
  8006b2a:	6003      	strhi	r3, [r0, #0]
  8006b2c:	700a      	strbls	r2, [r1, #0]
- 8006b2e:	f04f 30ff 	movhi.w	r0, #4294967295	; 0xffffffff
+ 8006b2e:	f04f 30ff 	movhi.w	r0, #4294967295
  8006b32:	bf98      	it	ls
  8006b34:	2001      	movls	r0, #1
  8006b36:	4770      	bx	lr
@@ -14432,7 +14440,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006c0e:	6e6b      	ldr	r3, [r5, #100]	; 0x64
  8006c10:	07dc      	lsls	r4, r3, #31
  8006c12:	d504      	bpl.n	8006c1e <_vfiprintf_r+0x4e>
- 8006c14:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8006c14:	f04f 30ff 	mov.w	r0, #4294967295
  8006c18:	b01d      	add	sp, #116	; 0x74
  8006c1a:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8006c1e:	89ab      	ldrh	r3, [r5, #12]
@@ -14472,7 +14480,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006c78:	2b00      	cmp	r3, #0
  8006c7a:	f000 80a1 	beq.w	8006dc0 <_vfiprintf_r+0x1f0>
  8006c7e:	2300      	movs	r3, #0
- 8006c80:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8006c80:	f04f 32ff 	mov.w	r2, #4294967295
  8006c84:	e9cd 2305 	strd	r2, r3, [sp, #20]
  8006c88:	f10a 0a01 	add.w	sl, sl, #1
  8006c8c:	9304      	str	r3, [sp, #16]
@@ -14539,7 +14547,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006d1c:	9203      	str	r2, [sp, #12]
  8006d1e:	2b00      	cmp	r3, #0
  8006d20:	bfb8      	it	lt
- 8006d22:	f04f 33ff 	movlt.w	r3, #4294967295	; 0xffffffff
+ 8006d22:	f04f 33ff 	movlt.w	r3, #4294967295
  8006d26:	3402      	adds	r4, #2
  8006d28:	9305      	str	r3, [sp, #20]
  8006d2a:	f8df a0d4 	ldr.w	sl, [pc, #212]	; 8006e00 <_vfiprintf_r+0x230>
@@ -14687,7 +14695,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006e70:	f000 f806 	bl	8006e80 <__swsetup_r>
  8006e74:	2800      	cmp	r0, #0
  8006e76:	d0d5      	beq.n	8006e24 <__swbuf_r+0x20>
- 8006e78:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
+ 8006e78:	f04f 37ff 	mov.w	r7, #4294967295
  8006e7c:	e7f4      	b.n	8006e68 <__swbuf_r+0x64>
 	...
 
@@ -14711,7 +14719,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006ea4:	602b      	str	r3, [r5, #0]
  8006ea6:	f042 0340 	orr.w	r3, r2, #64	; 0x40
  8006eaa:	81a3      	strh	r3, [r4, #12]
- 8006eac:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8006eac:	f04f 30ff 	mov.w	r0, #4294967295
  8006eb0:	e034      	b.n	8006f1c <__swsetup_r+0x9c>
  8006eb2:	0758      	lsls	r0, r3, #29
  8006eb4:	d512      	bpl.n	8006edc <__swsetup_r+0x5c>
@@ -14774,7 +14782,7 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8006f38:	d904      	bls.n	8006f44 <_raise_r+0x14>
  8006f3a:	2316      	movs	r3, #22
  8006f3c:	6003      	str	r3, [r0, #0]
- 8006f3e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8006f3e:	f04f 30ff 	mov.w	r0, #4294967295
  8006f42:	bd38      	pop	{r3, r4, r5, pc}
  8006f44:	6bc2      	ldr	r2, [r0, #60]	; 0x3c
  8006f46:	b112      	cbz	r2, 8006f4e <_raise_r+0x1e>
