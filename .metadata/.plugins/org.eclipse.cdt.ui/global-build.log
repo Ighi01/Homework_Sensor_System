@@ -3773,3 +3773,10 @@ Finished building: default.size.stdout
  
 Finished building: 5a.list
  
+19:55:51 **** Build of configuration Debug for project 5a ****
+make -j16 all 
+arm-none-eabi-size   5a.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31240	    476	   2348	  34064	   8510	5a.elf
+Finished building: default.size.stdout
+ 
