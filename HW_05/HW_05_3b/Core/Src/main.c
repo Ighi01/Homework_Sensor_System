@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "PMDB16_LCD.h"
+#include "math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,8 +31,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define V25 0.76
-#define AVG_SLOPE 2.5/1000
+#define SAMPLE_SIZE 1000
+#define VDD 3.3
+#define LDR_CONV 100000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,10 +48,11 @@ DMA_HandleTypeDef hdma_adc1;
 TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
-uint16_t adc_val[2000];
-char buff[20];
+uint16_t adc_val[SAMPLE_SIZE];
+char buff[80];
 int start = 0;
 /* USER CODE END PV */
 
@@ -61,29 +63,26 @@ static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM2_Init(void);
+
 /* USER CODE BEGIN PFP */
-void HAL_ADC_HalfConvCpltCallback(ADC_HandleTypeDef *hadc){
-	//get ADC value
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
+	uint32_t sum = 0;
 
-	float avg_adc_val = 0;
-	for(int i=0+start;i<1000+start;i++){
-		avg_adc_val += adc_val[i];
-	}
+	//sum in a variable all the 1000 samples
+	for(uint16_t i = 0 ; i<SAMPLE_SIZE; i++)
+		sum += adc_val[i];
 
-	if(start == 0)
-	{
-		start=1000;
-	}
-	else
-	{
-		start=0;
-	}
+	//calculate the average and convert it into voltage
+	float adc_avg = ((sum / SAMPLE_SIZE)*VDD)/4095.0;
+	//convert the voltage into resistance value
+	float ldr = (adc_avg * LDR_CONV)/(VDD  - adc_avg);
+	//convert the resistance value into LUX value
+	float lux = 10*pow((LDR_CONV/ldr), 1.25);
 
-	avg_adc_val /= 1000;
-
-	float temp =((avg_adc_val-V25)/AVG_SLOPE) + 25;
-	snprintf(buff, sizeof(buff),"V :%.4f V",temp);
-	lcd_println(buff,0);
+	//print into a buffer and send through UART with DMA
+	uint8_t length = snprintf(buff, sizeof(buff),"Voltage: %.2f V, Resistance: %.2f ohm, LUX: %.2f \n", adc_avg, ldr, lux);
+	if(HAL_UART_Transmit_DMA(&huart2, (uint8_t*) buff, length)!= HAL_OK)
+		Error_Handler();
 }
 /* USER CODE END PFP */
 
@@ -125,10 +124,13 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  lcd_initialize();
-  lcd_clear();
-  HAL_ADC_Start_DMA(&hadc1,adc_val,2000);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+
+  //start ADC in DMA mode
+  if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)adc_val,SAMPLE_SIZE) != HAL_OK)
+	  Error_Handler();
+  //start the timer that will trigger the ADC
+  if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1) != HAL_OK)
+	  Error_Handler();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -136,7 +138,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -259,16 +260,16 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 8400-1;
+  htim2.Init.Prescaler = 84-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10-1;
+  htim2.Init.Period = 1000-1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
@@ -329,8 +330,12 @@ static void MX_DMA_Init(void)
 
   /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
@@ -355,11 +360,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4|LD2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_12|GPIO_PIN_13
-                          |GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -367,21 +368,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA4 LD2_Pin */
-  GPIO_InitStruct.Pin = GPIO_PIN_4|LD2_Pin;
+  /*Configure GPIO pin : LD2_Pin */
+  GPIO_InitStruct.Pin = LD2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PB1 PB2 PB12 PB13
-                           PB14 PB15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_12|GPIO_PIN_13
-                          |GPIO_PIN_14|GPIO_PIN_15;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

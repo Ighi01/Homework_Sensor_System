@@ -1,0 +1,10 @@
+23:37:53 **** Incremental Build of configuration Debug for project HW_05_3b ****
+make -j12 all 
+arm-none-eabi-size   HW_05_3b.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38132	    496	   4392	  43020	   a80c	HW_05_3b.elf
+Finished building: default.size.stdout
+ 
+
+23:37:53 Build Finished. 0 errors, 0 warnings. (took 684ms)
+

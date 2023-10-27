@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
@@ -32,7 +33,7 @@
 /* USER CODE BEGIN PD */
 #define V25 0.76
 #define VMAX 3.3
-#define AVG_SLOPE 2.5/1000
+#define AVG_SLOPE 0.0025
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,7 +50,7 @@ DMA_HandleTypeDef hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
 uint16_t adc_val[3];
-char buff[100];
+char buff[80];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -58,15 +59,22 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_ADC1_Init(void);
+
 /* USER CODE BEGIN PFP */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
-	//convert it in the 0-3.3 range in float and print the value on the LCD
-	float pot = (adc_val[0]*VMAX)/4095.0;
-	float temp =((adc_val[1]-V25)/AVG_SLOPE)+25;
-	float ref = (adc_val[2]*VMAX)/4095.0;
 
-	snprintf(buff, sizeof(buff),"Potentiometer: %.3f V , Temperature: %.3f C , Vref: %.3f V \n",pot,temp,ref);
-	HAL_UART_Transmit_DMA(&huart2, (uint8_t*) buff, sizeof(buff)-1);
+	//convert the ADC value from the potentiometer to voltage
+	float pot = (adc_val[0]*VMAX)/4095;
+	//convert the ADC value from the T sensor to voltage
+	float temp = 25 + ( ( ( (adc_val[1]*VMAX)/4095) - V25 ) / AVG_SLOPE);
+	//convert the ADC value from the internal reference to voltage
+	float ref = (adc_val[2]*VMAX)/4095;
+
+	//print into a buffer and send through UART with DMA
+	int length = snprintf(buff, sizeof(buff),"Potentiometer: %.2f V , Temperature: %.2f C , Vref: %.2f V \n",pot,temp,ref);
+
+	if(HAL_UART_Transmit_DMA(&huart2, (uint8_t*) buff, length) != HAL_OK)
+		Error_Handler();
 }
 /* USER CODE END PFP */
 
@@ -115,7 +123,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    HAL_ADC_Start_DMA(&hadc1,(uint32_t*)adc_val,3);
+	//start the ADC in DMA mode
+	if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)adc_val,3) != HAL_OK)
+		Error_Handler();
+    //delay between acquisitions
     HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -200,7 +211,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 3;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
@@ -211,7 +222,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
