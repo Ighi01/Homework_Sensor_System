@@ -610,3 +610,10 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.cdt.dsf.gdb.service.I
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-10-27 23:41:07.641
 !MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.core.resources 4 77 2023-10-28 09:15:40.698
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-10-28 09:15:40.698
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-10-28 09:15:40.698
+!MESSAGE /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a overlaps the location of another project: 'HW_05_3a'

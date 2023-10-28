@@ -1,0 +1,104 @@
+2023-10-28 09:02:15,917 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,919 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,919 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,920 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,920 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,920 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,920 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,921 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,921 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,921 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,921 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,921 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,922 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,922 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,927 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,927 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,927 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,927 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,927 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,928 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,928 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,928 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,930 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:02:15,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 28, 2023 9:02:15 AM sun.awt.X11.XToolkit processException
+2023-10-28 09:02:15,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
+2023-10-28 09:02:15,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
+2023-10-28 09:02:15,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
+2023-10-28 09:02:15,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
+2023-10-28 09:02:15,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
+2023-10-28 09:02:15,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-28 09:02:15,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

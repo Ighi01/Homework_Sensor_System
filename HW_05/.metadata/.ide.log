@@ -1,209 +1,291 @@
-2023-10-27 15:31:18,731 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2023-10-27 21:13:50,808 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,809 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,809 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,809 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,810 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,810 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,810 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,810 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,811 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,811 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,811 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,811 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,812 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,813 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,813 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,814 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,814 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,814 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,814 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,814 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,815 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,815 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,815 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,815 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,815 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,816 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,901 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,901 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,902 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,903 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,904 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,905 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,906 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,907 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,908 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,924 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,967 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,968 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,968 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,968 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,969 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,969 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,969 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,970 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,970 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,970 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,971 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,971 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,971 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:50,973 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:50 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:50,973 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:50,973 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:50,973 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:50,974 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:50,974 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:50,974 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:50,975 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:50,975 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:50,975 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:50,976 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:50,976 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:50,977 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:51,048 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:51 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:51,049 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:51,049 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:51,049 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:51,050 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:51,050 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:51,050 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:51,050 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:51,051 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:51,051 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:51,051 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:51,051 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:51,052 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:51,053 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:51 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:51,053 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:51,053 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 5
-2023-10-27 21:13:51,054 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:51,054 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:51,054 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:51,055 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:51,055 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:51,055 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:51,055 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:51,056 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:51,056 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:51,056 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:51,338 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:51 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:51,339 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:51,339 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 4
-2023-10-27 21:13:51,339 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:51,340 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:51,340 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:51,340 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:51,340 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:51,340 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:51,341 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:51,341 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:51,341 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:51,341 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
-2023-10-27 21:13:51,342 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 27, 2023 9:13:51 PM sun.awt.X11.XToolkit processException
-2023-10-27 21:13:51,342 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Exception on Toolkit thread
-2023-10-27 21:13:51,342 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.IllegalArgumentException: Nonexistent button 4
-2023-10-27 21:13:51,343 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.event.MouseEvent.<init>(MouseEvent.java:774)
-2023-10-27 21:13:51,343 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XWindow.handleButtonPressRelease(XWindow.java:743)
-2023-10-27 21:13:51,343 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XComponentPeer.handleButtonPressRelease(XComponentPeer.java:74)
-2023-10-27 21:13:51,344 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchEvent(XBaseWindow.java:1144)
-2023-10-27 21:13:51,344 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XBaseWindow.dispatchToWindow(XBaseWindow.java:1116)
-2023-10-27 21:13:51,344 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.dispatchEvent(XToolkit.java:616)
-2023-10-27 21:13:51,345 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:731)
-2023-10-27 21:13:51,345 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/sun.awt.X11.XToolkit.run(XToolkit.java:647)
-2023-10-27 21:13:51,345 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.lang.Thread.run(Thread.java:833)
-2023-10-27 21:13:51,346 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-10-28 09:12:48,945 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,946 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,946 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,947 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,948 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,948 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,948 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,948 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,948 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,964 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,983 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,983 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,983 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,984 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,985 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:12:48,999 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,580 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-10-28 09:15:39,611 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,612 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,612 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,614 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,615 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 1 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 2 : true
+2023-10-28 09:15:39,633 [INFO] ADCParametersView:116 -                Rank 3 : true
+2023-10-28 09:15:40,527 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 328193528 Bytes (916455424)
+2023-10-28 09:15:40,615 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 344444408 Bytes (916455424)
+2023-10-28 09:15:40,910 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 377476600 Bytes (916455424)
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2023-10-28 09:15:41,016 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-10-28 09:15:41,016 [INFO] CodeGenerator:799 - code generatio: config db path: /opt/st/stm32cubeide_1.13.1/plugins/com.st.stm32cube.common.mx_6.9.1.202307191849//db/
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-10-28 09:15:41,019 [INFO] Argument:321 - 	 sub Args: 
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : Instancevalue: DMA2_Stream0
+2023-10-28 09:15:41,019 [INFO] Argument:329 - Argument : Instancevalue: DMA2_Stream0
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : Initvalue: null
+2023-10-28 09:15:41,019 [INFO] Argument:321 - 	 sub Args: 
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-10-28 09:15:41,019 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_0
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-10-28 09:15:41,019 [INFO] Argument:329 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-10-28 09:15:41,019 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-10-28 09:15:41,019 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-10-28 09:15:41,019 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : Modevalue: DMA_CIRCULAR
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : Modevalue: DMA_CIRCULAR
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : Statevalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : Statevalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-10-28 09:15:41,020 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : hdmavalue: null
+2023-10-28 09:15:41,025 [INFO] Argument:321 - 	 sub Args: 
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Instancevalue: DMA1_Stream6
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : Instancevalue: DMA1_Stream6
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Initvalue: null
+2023-10-28 09:15:41,025 [INFO] Argument:321 - 	 sub Args: 
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Channelvalue: DMA_CHANNEL_4
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : Channelvalue: DMA_CHANNEL_4
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Modevalue: DMA_NORMAL
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : Modevalue: DMA_NORMAL
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : FIFOThresholdvalue: null
+2023-10-28 09:15:41,025 [INFO] Argument:329 - Argument : FIFOThresholdvalue: null
+2023-10-28 09:15:41,025 [INFO] Argument:319 - Argument : MemBurstvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : MemBurstvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : PeriphBurstvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : PeriphBurstvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : Lockvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : Lockvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : Statevalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : Statevalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : Parentvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : Parentvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : XferCpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : XferCpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : XferHalfCpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : XferHalfCpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : XferM1CpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : XferM1CpltCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : XferErrorCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : XferErrorCallbackvalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:319 - Argument : ErrorCodevalue: null
+2023-10-28 09:15:41,026 [INFO] Argument:329 - Argument : ErrorCodevalue: null
+2023-10-28 09:15:41,114 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/license.tmp_save
+2023-10-28 09:15:41,165 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/license.tmp
+2023-10-28 09:15:41,177 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/gpio.tmp_save
+2023-10-28 09:15:41,224 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/gpio.tmp
+2023-10-28 09:15:41,310 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/dma.tmp_save
+2023-10-28 09:15:41,352 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/dma.tmp
+2023-10-28 09:15:41,352 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/dma_GV.tmp_save
+2023-10-28 09:15:41,388 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/dma_GV.tmp
+2023-10-28 09:15:41,391 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/stm32f4xx_it.c_save
+2023-10-28 09:15:41,494 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/stm32f4xx_it.c
+2023-10-28 09:15:41,495 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/stm32f4xx_it.h_save
+2023-10-28 09:15:41,543 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/stm32f4xx_it.h
+2023-10-28 09:15:41,544 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/stm32f4xx_hal_msp.c_save
+2023-10-28 09:15:41,605 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/stm32f4xx_hal_msp.c
+2023-10-28 09:15:41,605 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/system.tmp_save
+2023-10-28 09:15:41,693 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/MXTmpFiles/system.tmp
+2023-10-28 09:15:41,695 [INFO] CodeEngine:311 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/stm32f4xx_hal_conf.h_save
+2023-10-28 09:15:41,742 [INFO] CodeEngine:335 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/stm32f4xx_hal_conf.h
+2023-10-28 09:15:41,760 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/main.h_save
+2023-10-28 09:15:41,811 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Inc/main.h
+2023-10-28 09:15:41,811 [INFO] CodeEngine:255 - oldGeneratedFile, /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/main.c_save
+2023-10-28 09:15:41,872 [INFO] CodeEngine:279 - Generated code: /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3a/Core/Src/main.c
+2023-10-28 09:15:42,276 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 19mS.
+2023-10-28 09:15:42,277 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-10-28 09:15:42,436 [INFO] ConfigFileManager:1457 - The Die is : DIE433
+2023-10-28 09:15:42,444 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-10-28 09:15:42,470 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-10-28 09:15:42,474 [INFO] ApiDbMcu:507 - Load IP Config File for LIBJPEG
+2023-10-28 09:15:42,514 [INFO] ApiDbMcu:507 - Load IP Config File for MBEDTLS
+2023-10-28 09:15:42,548 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-10-28 09:15:42,556 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST
+2023-10-28 09:15:43,338 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1061mS.
+2023-10-28 09:15:43,338 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-10-28 09:15:43,339 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
