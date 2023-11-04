@@ -55,14 +55,16 @@ DMA_HandleTypeDef hdma_usart2_rx;
 DMA_HandleTypeDef hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
+//control register addresses and their initialization bytes value
 uint8_t CTRL_REG1[2] = {0x20,0b00010111};
 uint8_t CTRL_REG2[2] = {0x21,0b00000000};
 uint8_t CTRL_REG4[2] = {0x23,0b00000000};
 
-//addresses registers that store the acceleration values
-uint8_t ACC_OUT_X = 0x29;
-uint8_t ACC_OUT_Y = 0x2B;
-uint8_t ACC_OUT_Z = 0x2D;
+//sub address of register that stores x value
+//0x80 is added to set the MSB of the address to 1, to activate the auto increment, see datasheet pag.22
+uint8_t ACC_OUT_X = 0x29+0x80;
+//uint8_t ACC_OUT_Y = 0x2B;
+//uint8_t ACC_OUT_Z = 0x2D;
 
 int8_t x = 0;
 int8_t y = 0;
@@ -89,21 +91,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if(htim == &htim2)
 	{
 		//tell to LIS2DE which register you want to read from
+		//the MSB of the subaddress is set to 1 to activate the auto increment, see datasheet pag.22
 		if(HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, &ACC_OUT_X, 1, 50) != HAL_OK)
 			Error_Handler();
 
 		//Read data from the register (x)
+		//1 is summed to the address to tell the slave that we need to read data (see datasheet pag.22)
 		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &x, sizeof(x), 50) != HAL_OK)
-			Error_Handler();
-
-		if(HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, &ACC_OUT_Y, 1, 50) != HAL_OK)
 			Error_Handler();
 
 		//Read data from the register (y)
 		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &y, sizeof(y), 50) != HAL_OK)
-			Error_Handler();
-
-		if(HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, &ACC_OUT_Z, 1, 50) != HAL_OK)
 			Error_Handler();
 
 		//Read data from the register (z)
@@ -117,7 +115,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		char string[100];
 
-		int length = snprintf(string,sizeof(string),"X: %1.2f\r\nY: %1.2f\r\nZ: %1.2f\r\n\r\n",x_g,y_g,z_g);
+		int length = snprintf(string,sizeof(string),"X: %1.2fg\r\nY: %1.2fg\r\nZ: %1.2fg\r\n\r\n",x_g,y_g,z_g);
 		//Transmit data on UART_DMA
 		HAL_UART_Transmit_DMA(&huart2, (uint8_t*)string, length);
 
