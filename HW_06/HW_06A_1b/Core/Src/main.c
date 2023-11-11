@@ -32,6 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+//LM75 address
 #define ADDR 0b10010000
 #define DATA 0x00
 /* USER CODE END PD */
@@ -49,8 +50,7 @@ TIM_HandleTypeDef htim2;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int8_t temp[2];
-char buff[50];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,8 +69,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim == &htim2)
 	{
-		HAL_I2C_Master_Receive(&hi2c1, ADDR+1, (uint8_t*) &temp, 16, 100);
-		int length = snprintf(buff, sizeof(buff),"Valore: %d.%.3d C\n\r", temp[0], abs(((temp[1]>>5)*125)));
+		// 1 is added to the address in order to start a reading operation (see datasheet)
+		uint8_t temp[2];
+		HAL_I2C_Master_Receive(&hi2c1, ADDR+1, (uint8_t*) &temp, 2, 100);
+		// create first a int16 register, then convert it to float by dividing by 256.0
+		float temp_tot = ((int16_t)(temp[0]<<8 | temp[1]))/256.0;
+		char buff[50];
+		int length = snprintf(buff, sizeof(buff),"Temperature: %.3f C\n\r", temp_tot);
 		HAL_UART_Transmit(&huart2, (uint8_t*)buff, length, 100);
 	}
 }
@@ -215,6 +220,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 0 */
 
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
 
@@ -227,12 +233,21 @@ static void MX_TIM2_Init(void)
   htim2.Init.Period = 10000-1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_OC_Init(&htim2) != HAL_OK)
   {
     Error_Handler();
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_ENABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();

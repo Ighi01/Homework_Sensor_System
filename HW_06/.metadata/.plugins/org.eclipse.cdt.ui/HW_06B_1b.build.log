@@ -1,4 +1,4 @@
-20:41:10 **** Incremental Build of configuration Debug for project HW_06B_1b ****
+23:17:10 **** Incremental Build of configuration Debug for project HW_06B_1b ****
 make -j12 all 
 arm-none-eabi-size   HW_06B_1b.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   HW_06B_1b.elf
 Finished building: default.size.stdout
  
 
-20:41:11 Build Finished. 0 errors, 0 warnings. (took 674ms)
+23:17:10 Build Finished. 0 errors, 0 warnings. (took 674ms)
 
