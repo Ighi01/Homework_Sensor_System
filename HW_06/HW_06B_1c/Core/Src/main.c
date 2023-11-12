@@ -63,9 +63,6 @@ uint8_t CTRL_REG4[2] = {0x23,0b00000000};
 //sub address of register that stores x value
 //0x80 is added to set the MSB of the address to 1, to activate the auto increment, see datasheet pag.22
 uint8_t ACC_OUT_X = 0x29+0x80;
-//uint8_t ACC_OUT_Y = 0x2B;
-//uint8_t ACC_OUT_Z = 0x2D;
-
 int8_t directions[5];
 
 /* USER CODE END PV */
