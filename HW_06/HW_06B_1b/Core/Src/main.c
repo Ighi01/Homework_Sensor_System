@@ -51,10 +51,10 @@ I2C_HandleTypeDef hi2c1;
 TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
-DMA_HandleTypeDef hdma_usart2_rx;
 DMA_HandleTypeDef hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
+
 //control register addresses and their initialization bytes value
 uint8_t CTRL_REG1[2] = {0x20,0b00010111};
 uint8_t CTRL_REG2[2] = {0x21,0b00000000};
@@ -63,12 +63,7 @@ uint8_t CTRL_REG4[2] = {0x23,0b00000000};
 //sub address of register that stores x value
 //0x80 is added to set the MSB of the address to 1, to activate the auto increment, see datasheet pag.22
 uint8_t ACC_OUT_X = 0x29+0x80;
-//uint8_t ACC_OUT_Y = 0x2B;
-//uint8_t ACC_OUT_Z = 0x2D;
 
-int8_t x = 0;
-int8_t y = 0;
-int8_t z = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,6 +85,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim == &htim2)
 	{
+		int8_t coordinates[5];
 		//tell to LIS2DE which register you want to read from
 		//the MSB of the subaddress is set to 1 to activate the auto increment, see datasheet pag.22
 		if(HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, &ACC_OUT_X, 1, 50) != HAL_OK)
@@ -97,24 +93,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		//Read data from the register (x)
 		//1 is summed to the address to tell the slave that we need to read data (see datasheet pag.22)
-		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &x, sizeof(x), 50) != HAL_OK)
-			Error_Handler();
-
-		//Read data from the register (y)
-		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &y, sizeof(y), 50) != HAL_OK)
-			Error_Handler();
-
-		//Read data from the register (z)
-		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &z, sizeof(z), 50) != HAL_OK)
+		if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &coordinates, 5, 50) != HAL_OK)
 			Error_Handler();
 
 		//conversion in g
-		float x_g = x/64.0;
-		float y_g = y/64.0;
-		float z_g = z/64.0;
+		float x_g = coordinates[0]/64.0;
+		float y_g = coordinates[2]/64.0;
+		float z_g = coordinates[4]/64.0;
 
 		char string[100];
-
 		int length = snprintf(string,sizeof(string),"X: %1.2fg\r\nY: %1.2fg\r\nZ: %1.2fg\r\n\r\n",x_g,y_g,z_g);
 		//Transmit data on UART_DMA
 		HAL_UART_Transmit_DMA(&huart2, (uint8_t*)string, length);
@@ -164,11 +151,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  HAL_TIM_Base_Start_IT(&htim2);
   // send the configuration values to the 3 registers
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG1, 2, 100);
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG2, 2, 100);
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG4, 2, 100);
+  //start timer
+  HAL_TIM_Base_Start_IT(&htim2);
 
   while (1)
   {
@@ -360,9 +348,6 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
-  /* DMA1_Stream5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA1_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);

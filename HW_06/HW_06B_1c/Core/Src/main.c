@@ -96,17 +96,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		//1 is summed to the address to tell the slave that we need to read data (see datasheet pag.22)
 		if(HAL_I2C_Master_Receive_DMA(&hi2c1, LIS2DE_ADD+1, (uint8_t*)directions, 5) != HAL_OK)
 			Error_Handler();
-
-		//if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &x, sizeof(x), 50) != HAL_OK)
-
-
-		//Read data from the register (y)
-		//if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &y, sizeof(y), 50) != HAL_OK)
-			//Error_Handler();
-
-		//Read data from the register (z)
-		//if(HAL_I2C_Master_Receive(&hi2c1, LIS2DE_ADD+1, (uint8_t*) &z, sizeof(z), 50) != HAL_OK)
-			//Error_Handler();
 	}
 }
 
@@ -155,11 +144,12 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
   // send the configuration values to the 3 registers
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG1, 2, 100);
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG2, 2, 100);
   HAL_I2C_Master_Transmit(&hi2c1, LIS2DE_ADD, CTRL_REG4, 2, 100);
+  // start the timer
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
