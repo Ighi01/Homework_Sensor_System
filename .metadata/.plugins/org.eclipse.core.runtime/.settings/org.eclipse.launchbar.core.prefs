@@ -1,9 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HOMEWORK_01,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_class_uart Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_hw_lcd Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_04_2b Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_04_2c Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_05_3b,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:5a
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HOMEWORK_01,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_class_uart Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_hw_lcd Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_04_2b Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_04_2c Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_06A_1b Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_06B_1b Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_06B_1c Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:5a,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_05_3a Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_05_3b,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_07_1b,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_07_1a,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_07_1b (1)
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_class_uart\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_class_uart\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HOMEWORK_01/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HOMEWORK_01/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HW_07_1a/activeLaunchMode=run

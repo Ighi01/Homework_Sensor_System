@@ -60,8 +60,8 @@ all: main-build
 main-build: HOMEWORK_01.elf secondary-outputs
 
 # Tool invocations
-HOMEWORK_01.elf HOMEWORK_01.map: $(OBJS) $(USER_OBJS) C:\Users\ignaI\STM32CubeIDE\workspace_1.13.1\HOMEWORK_01\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "HOMEWORK_01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ignaI\STM32CubeIDE\workspace_1.13.1\HOMEWORK_01\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HOMEWORK_01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+HOMEWORK_01.elf HOMEWORK_01.map: $(OBJS) $(USER_OBJS) C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_01\led_pwm\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HOMEWORK_01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_01\led_pwm\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HOMEWORK_01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

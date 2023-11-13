@@ -1,10 +1,16 @@
-19:34:16 **** Incremental Build of configuration Debug for project HW_05_3b ****
+16:12:32 **** Build of configuration Debug for project HW_05_3b ****
 make -j16 all 
+arm-none-eabi-gcc -o "HW_05_3b.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_05\HW_05_3b\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_05_3b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HW_05_3b.elf
+ 
 arm-none-eabi-size   HW_05_3b.elf 
+arm-none-eabi-objdump -h -S  HW_05_3b.elf  > "HW_05_3b.list"
    text	   data	    bss	    dec	    hex	filename
-  30376	    516	   6220	  37112	   90f8	HW_05_3b.elf
+  38132	    496	   4392	  43020	   a80c	HW_05_3b.elf
 Finished building: default.size.stdout
  
+Finished building: HW_05_3b.list
+ 
 
-19:34:16 Build Finished. 0 errors, 0 warnings. (took 194ms)
+16:12:33 Build Finished. 0 errors, 0 warnings. (took 874ms)
 

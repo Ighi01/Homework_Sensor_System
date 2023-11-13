@@ -9,6 +9,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_07"/>
+			<item value="C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_06"/>
 			<item value="C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System"/>
 			<item value="C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_05"/>
 			<item value="C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_05_3a"/>

@@ -60,8 +60,8 @@ all: main-build
 main-build: HW_05_3b.elf secondary-outputs
 
 # Tool invocations
-HW_05_3b.elf HW_05_3b.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3b/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "HW_05_3b.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_05/HW_05_3b/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_05_3b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+HW_05_3b.elf HW_05_3b.map: $(OBJS) $(USER_OBJS) C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_05\HW_05_3b\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HW_05_3b.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ignaI\OneDrive\Documenti\GitHub\Homework_Sensor_System\HW_05\HW_05_3b\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW_05_3b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

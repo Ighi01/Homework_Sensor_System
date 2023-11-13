@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_rnglists 00000b36  00000000  00000000  00031e98  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00018aae  00000000  00000000  000329ce  2**0
+ 17 .debug_macro  00018ab7  00000000  00000000  000329ce  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00010e17  00000000  00000000  0004b47c  2**0
+ 18 .debug_line   00010e17  00000000  00000000  0004b485  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0009aeba  00000000  00000000  0005c293  2**0
+ 19 .debug_str    0009aeba  00000000  00000000  0005c29c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00004de0  00000000  00000000  000f7150  2**2
+ 20 .debug_frame  00004de0  00000000  00000000  000f7158  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007d  00000000  00000000  000fbf30  2**0
+ 21 .debug_line_str 0000007d  00000000  00000000  000fbf38  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2070,7 +2070,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc){
  8001494:	4b14      	ldr	r3, [pc, #80]	; (80014e8 <HAL_ADC_ConvCpltCallback+0xc0>)
  8001496:	701a      	strb	r2, [r3, #0]
 
-	//convert the ADC value in a value between 0 to 80 for the bargraph
+	//convert the ADC value in a value between 0 to 80 for the bar graph
 	bar_val = (adc_val * 80)/4096;
  8001498:	4b0e      	ldr	r3, [pc, #56]	; (80014d4 <HAL_ADC_ConvCpltCallback+0xac>)
  800149a:	681a      	ldr	r2, [r3, #0]
