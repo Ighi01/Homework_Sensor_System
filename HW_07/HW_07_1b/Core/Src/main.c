@@ -75,7 +75,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if(htim == &htim10){
 
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		//HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 	    HAL_SPI_Transmit_DMA(&hspi1,&buffer[index_letter],2);
 
 		index_letter+=2;
@@ -107,7 +108,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 {
-	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+	//HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
 }
 /* USER CODE END 0 */

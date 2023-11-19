@@ -65,9 +65,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if(htim == &htim10){
 
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		//HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 	    HAL_SPI_Transmit(&hspi1,&A[index_letter],2,50);
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		//HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_6);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
 		index_letter+=2;
 
