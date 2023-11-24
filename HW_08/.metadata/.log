@@ -406,3 +406,9 @@ Project's 'HW08_1a' active one is 'HW08_1a.ioc' file
 !MESSAGE Invalid Input: Must be project's active .ioc file.
 
 Project's 'HW08_1a' active one is 'HW08_1a.ioc' file
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-24 10:48:56.056
+!MESSAGE Indexed 'HW08_1b' (22 sources, 82 headers) in 1.98 sec: 4,716 declarations; 22,526 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0073%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-24 10:57:10.712
+!MESSAGE Indexed 'HW08_1b' (22 sources, 84 headers) in 0.82 sec: 5,979 declarations; 39,232 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0044%)
