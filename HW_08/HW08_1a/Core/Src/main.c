@@ -18,11 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stdio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,11 +69,9 @@ static void MX_TIM3_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	char buff[50];
-	int len;
-	int16_t curr_count;
-	int16_t last_count;
-	int16_t delta;
+  char buff[50];
+  uint8_t len = 0;
+  int16_t curr_count, last_count, delta = 0;
 
   /* USER CODE END 1 */
 
@@ -109,17 +106,20 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  curr_count = __HAL_TIM_GET_COUNTER(&htim3);
+	  //read timer value
+	  curr_count = (int16_t) __HAL_TIM_GET_COUNTER(&htim3);
 
-	  //using a int16 delta, will result in an overflow that nevertheless coresponds to the right number of ticks
+	  //delta is a int16_t like curr_count and last_count. Binary subtraction needs n+1 = 17 bits to account
+	  //for carry, however if we discard the 17th bit and consider signed variable, we solve the roll up issue
 	  delta = curr_count - last_count;
 
-	  // a full round are 24 ticks
-	  len = snprintf(buff, sizeof(buff),"Counter: %d rpm \n\r",delta*60/24);
+	  //a full round consists of 24 ticks
+	  len = snprintf(buff, sizeof(buff),"Speed: %.2f rpm \n\r", delta*60/24.0);
 
 	  last_count = curr_count;
 
-	  if(HAL_UART_Transmit(&huart2, &buff, len, 100) != HAL_OK)
+	  //send through UART the speed
+	  if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
 	  		  Error_Handler();
 
 	  HAL_Delay(1000);
@@ -198,14 +198,14 @@ static void MX_TIM3_Init(void)
   htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 65535;
-  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
-  sConfig.IC1Polarity = TIM_ICPOLARITY_FALLING;
+  sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
   sConfig.IC1Filter = 15;
-  sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
+  sConfig.IC2Polarity = TIM_ICPOLARITY_FALLING;
   sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
   sConfig.IC2Filter = 15;

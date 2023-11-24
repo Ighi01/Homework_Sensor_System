@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 08_class_encoder
+BUILD_ARTIFACT_NAME := HW08_1a
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-08_class_encoder.elf \
+HW08_1a.elf \
 
 MAP_FILES += \
-08_class_encoder.map \
+HW08_1a.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-08_class_encoder.list \
+HW08_1a.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 08_class_encoder.elf secondary-outputs
+main-build: HW08_1a.elf secondary-outputs
 
 # Tool invocations
-08_class_encoder.elf 08_class_encoder.map: $(OBJS) $(USER_OBJS) /home/stexo/Nextcloud/uni/Polimi/9_Semestre/Sensor_Systems/cubeProjects/08_class_encoder/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "08_class_encoder.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/stexo/Nextcloud/uni/Polimi/9_Semestre/Sensor_Systems/cubeProjects/08_class_encoder/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="08_class_encoder.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+HW08_1a.elf HW08_1a.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_08/HW08_1a/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HW08_1a.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_08/HW08_1a/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW08_1a.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-08_class_encoder.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "08_class_encoder.list"
+HW08_1a.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "HW08_1a.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 08_class_encoder.elf 08_class_encoder.list 08_class_encoder.map default.size.stdout
+	-$(RM) HW08_1a.elf HW08_1a.list HW08_1a.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
