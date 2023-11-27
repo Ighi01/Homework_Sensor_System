@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "time.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,9 +44,8 @@
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-uint8_t val = 0;
-int i = 8;
-int prev_val =-1;
+int i = 0;
+uint32_t press_time[4][4];
 char buff[50];
 /* USER CODE END PV */
 
@@ -60,29 +60,32 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	int j;
 	switch(GPIO_Pin){
 	case GPIO_PIN_2:
-		val = i+4;
+		j = 2;
 		break;
 	case GPIO_PIN_3:
-		val = i;
+		j = 3;
 		break;
 	case GPIO_PIN_12:
-		val = i-4;
+		j = 0;
 		break;
 	case GPIO_PIN_13:
-		val = i-8;
+		j = 1;
 		break;
 	}
-	if(prev_val == val) return;
-	int len = snprintf(buff, sizeof(buff),"%d \n", val);
-	//send through UART the speed
-	if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
-		Error_Handler();
-	prev_val = val;
+	uint32_t now = HAL_GetTick();
+	if(now - press_time[i][j]> 60)
+	{
+		int len = snprintf(buff, sizeof(buff),"%d \n", i + j*4);
+		//send through UART the speed
+		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
+			Error_Handler();
+	}
+	press_time[i][j] = now;
 }
 /* USER CODE END 0 */
-
 /**
   * @brief  The application entry point.
   * @retval int
@@ -90,7 +93,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	for(int h=0;h<3;h++){
+		for(int k=0;k<3;k++){
+			press_time[h][k]=-1;
+		}
+	}
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -121,28 +128,30 @@ int main(void)
   while (1)
   {
 	  switch(i){
-	  	  case 8:
+	  	  case 0:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
 	  		  break;
-	  	  case 9:
+	  	  case 1:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
 	  		  break;
-	  	  case 10:
+	  	  case 2:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 0);
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1);
 	  		  break;
-	  	  case 11:
+	  	  case 3:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
 	  		  break;
-	  	  case 12:
+	  	  case 4:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
-	  		  i=7;
+	  		  i=-1;
 	  		  break;
 	  }
-	  i++;
+
 	  HAL_Delay(10);
+
+	  i++;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
