@@ -63,8 +63,11 @@ static void MX_TIM10_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+// Only for the first falling edge (start bit), set the flag to 1
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == GPIO_PIN_10){
+    //only if it is the first bit (start) that triggered the interrupt, set flag to 1
 		if(bit_counter == 0)
 			UART_started_flag = 1;
 		else
@@ -74,11 +77,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 	if(htim == &htim10){
+    //increase bit count and set flag to 1
 		if(bit_counter<9){
 			bit_counter++;
 			tim_elapsed = 1;
 		}
 		else{
+      //stop bit reached, reset payload, bit counter and flags. Stop timer
 			payload = 0;
 			bit_counter = 0;
 			tim_elapsed = 0;
@@ -127,40 +132,41 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	if(UART_started_flag || tim_elapsed){
-		bit_val = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
+    //only if start bit arrived or timer elapsed, execute code inside the if
+    if(UART_started_flag || tim_elapsed){
 
-		len = snprintf(buff, sizeof(buff)," %d ", bit_val);
-		//send through UART the number of pushbutton pressed
-		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len,100) != HAL_OK)
-			Error_Handler();
+      //read bit value
+      bit_val = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
 
-		if(bit_counter != 0){
-			payload = (payload | (bit_val << (bit_counter-1))) & 0b01111111;
-		}
+      //print bit value to UART
+      len = snprintf(buff, sizeof(buff)," %d ", bit_val);
+      if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len,100) != HAL_OK)
+        Error_Handler();
 
-		/*len = snprintf(buff, sizeof(buff),"Bit Counter: %d\n", bit_counter);
-		//send through UART the number of pushbutton pressed
-		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len,100) != HAL_OK)
-			Error_Handler();*/
+      //add bit to payload 
+      if(bit_counter != 0){
+        payload = (payload | (bit_val << (bit_counter-1))) & 0b01111111;
+      }
 
-		if(bit_counter == 9){
-			len = snprintf(buff, sizeof(buff)," = Payload: %d\n", payload);
-			//send through UART the number of pushbutton pressed
-			if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len,100) != HAL_OK)
-				Error_Handler();
-		}
+      //if 10th bit reached, print payload to UART
+      if(bit_counter == 9){
+        len = snprintf(buff, sizeof(buff)," = Payload: %d\n", payload);
+        //send through UART the number of pushbutton pressed
+        if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len,100) != HAL_OK)
+          Error_Handler();
+      }
 
-		HAL_TIM_Base_Start_IT(&htim10);
-		UART_started_flag = 0;
-		tim_elapsed = 0;
-	}
+      //start the timer and reset the flags
+      HAL_TIM_Base_Start_IT(&htim10);
+      UART_started_flag = 0;
+      tim_elapsed = 0;
+    }
 
-    /* USER CODE END WHILE */
+      /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+      /* USER CODE BEGIN 3 */
   }
-  /* USER CODE END 3 */
+    /* USER CODE END 3 */
 }
 
 /**
