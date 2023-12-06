@@ -32,7 +32,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,7 +43,7 @@
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int i = 0;
+int column = 0;
 uint32_t press_time[4][4];
 char buff[50];
 /* USER CODE END PV */
@@ -60,30 +59,33 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	int j;
+	int row;
+	//Based on which pin triggered the interrupt, row is assigned its correct value
 	switch(GPIO_Pin){
-	case GPIO_PIN_2:
-		j = 2;
-		break;
-	case GPIO_PIN_3:
-		j = 3;
-		break;
-	case GPIO_PIN_12:
-		j = 0;
-		break;
-	case GPIO_PIN_13:
-		j = 1;
-		break;
+		case GPIO_PIN_2:
+			row = 2;
+			break;
+		case GPIO_PIN_3:
+			row = 3;
+			break;
+		case GPIO_PIN_12:
+			row = 0;
+			break;
+		case GPIO_PIN_13:
+			row = 1;
+			break;
 	}
+	//current time is acquired
 	uint32_t now = HAL_GetTick();
-	if(now - press_time[j][i]> 60)
-	{
-		int len = snprintf(buff, sizeof(buff),"%d \n", i + j*4);
-		//send through UART the number of pushbutton pressed
+	//if difference between previous and current press time is > than 60ms, button has been pressed
+	if(now - press_time[row][column]> 60){
+		//Button pressed! Print through UART the corresponding number
+		int len = snprintf(buff, sizeof(buff),"%d \n", column + row*4);
 		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
 			Error_Handler();
 	}
-	press_time[j][i] = now;
+	//assign current time to time matrix
+	press_time[row][column] = now;
 }
 /* USER CODE END 0 */
 /**
@@ -93,11 +95,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	for(int h=0;h<3;h++){
-		for(int k=0;k<3;k++){
-			press_time[h][k]=-1;
-		}
-	}
+
+  //initialization of the time matrix
+  for(int h=0;h<3;h++){
+	  for(int k=0;k<3;k++){
+		  press_time[h][k]=-1;
+	  }
+  }
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -127,7 +132,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  switch(i){
+	  switch(column){
 	  	  case 0:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
 	  		  break;
@@ -145,11 +150,11 @@ int main(void)
 	  		  break;
 	  	  case 4:
 	  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
-	  		  i=-1;
+	  		  column=-1;
 	  		  break;
 	  }
 	  HAL_Delay(10);
-	  i++;
+	  column++;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

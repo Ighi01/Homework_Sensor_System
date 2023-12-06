@@ -60,8 +60,8 @@ all: main-build
 main-build: HW09_1b.elf secondary-outputs
 
 # Tool invocations
-HW09_1b.elf HW09_1b.map: $(OBJS) $(USER_OBJS) /home/lory/Scrivania/Sensor/git_repo/Homework_Sensor_System/HW_09/HW09_1b/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "HW09_1b.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/lory/Scrivania/Sensor/git_repo/Homework_Sensor_System/HW_09/HW09_1b/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW09_1b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+HW09_1b.elf HW09_1b.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_09/HW09_1b/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HW09_1b.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_09/HW09_1b/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW09_1b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -45,11 +45,10 @@ TIM_HandleTypeDef htim10;
 
 UART_HandleTypeDef huart2;
 
-int i = 0;
+/* USER CODE BEGIN PV */
+int column = 0;
 uint32_t press_time[4][4];
 char buff[50];
-/* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,55 +63,62 @@ static void MX_TIM10_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	int j;
+	int row;
+	//Based on which pin triggered the interrupt, row is assigned its correct value
 	switch(GPIO_Pin){
-	case GPIO_PIN_2:
-		j = 2;
-		break;
-	case GPIO_PIN_3:
-		j = 3;
-		break;
-	case GPIO_PIN_12:
-		j = 0;
-		break;
-	case GPIO_PIN_13:
-		j = 1;
-		break;
+		case GPIO_PIN_2:
+			row = 2;
+			break;
+		case GPIO_PIN_3:
+			row = 3;
+			break;
+		case GPIO_PIN_12:
+			row = 0;
+			break;
+		case GPIO_PIN_13:
+			row = 1;
+			break;
 	}
+	//current time is acquired
 	uint32_t now = HAL_GetTick();
-	if(now - press_time[j][i]> 60)
+	//if difference between previous and current press time is > than 60ms, button has been pressed
+	if(now - press_time[row][column]> 60)
 	{
-		int len = snprintf(buff, sizeof(buff),"%x \n", i + j*4-1);
-		//send through UART the number of pushbutton pressed
+		//Button pressed! Print through UART the corresponding number
+		int len = snprintf(buff, sizeof(buff),"%x \n", column + row*4-1);
 		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
 			Error_Handler();
 	}
-	press_time[j][i] = now;
+	//assign current time to time matrix
+	press_time[row][column] = now;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	switch(i){
-		  	  case 0:
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
-		  		  break;
-		  	  case 1:
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
-		  		  break;
-		  	  case 2:
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 0);
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1);
-		  		  break;
-		  	  case 3:
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
-		  		  break;
-		  	  case 4:
-		  		  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
-		  		  i=-1;
-		  		  break;
-		  }
-		  i++;
+	if(htim == &htim10){
+		//switch measured column
+		switch(column){
+			case 0:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
+			break;
+			case 1:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
+			break;
+			case 2:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 0);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1);
+			break;
+			case 3:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
+			break;
+			case 4:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
+				column=-1;
+			break;
+		}
+		column++;
+	}
 }
 /* USER CODE END 0 */
 
@@ -123,6 +129,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
+  //initialization of the time matrix
   for(int h=0;h<3;h++){
 	  for(int k=0;k<3;k++){
 		  press_time[h][k]=-1;
@@ -150,11 +158,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_TIM10_Init();
-
-  if(HAL_TIM_Base_Start_IT(&htim10)!= HAL_OK)
-    	  Error_Handler();
   /* USER CODE BEGIN 2 */
-
+  if(HAL_TIM_Base_Start_IT(&htim10)!= HAL_OK)
+      	  Error_Handler();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -230,9 +236,9 @@ static void MX_TIM10_Init(void)
 
   /* USER CODE END TIM10_Init 1 */
   htim10.Instance = TIM10;
-  htim10.Init.Prescaler = 8400;
+  htim10.Init.Prescaler = 8400-1;
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim10.Init.Period = 100;
+  htim10.Init.Period = 100-1;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim10.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim10) != HAL_OK)

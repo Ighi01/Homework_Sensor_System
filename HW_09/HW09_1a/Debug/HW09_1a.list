@@ -29,9 +29,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002008c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00007529  00000000  00000000  000200cf  2**0
+ 13 .debug_info   0000752c  00000000  00000000  000200cf  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001402  00000000  00000000  000275f8  2**0
+ 14 .debug_abbrev 00001402  00000000  00000000  000275fb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_aranges 00000648  00000000  00000000  00028a00  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   00007a40  00000000  00000000  0003ec99  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00085381  00000000  00000000  000466d9  2**0
+ 19 .debug_str    00085388  00000000  00000000  000466d9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00001d94  00000000  00000000  000cba5c  2**2
+ 20 .debug_frame  00001d94  00000000  00000000  000cba64  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000078  00000000  00000000  000cd7f0  2**0
+ 21 .debug_line_str 00000078  00000000  00000000  000cd7f8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -423,7 +423,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  8000580:	af00      	add	r7, sp, #0
  8000582:	4603      	mov	r3, r0
  8000584:	80fb      	strh	r3, [r7, #6]
-	int j;
+	int row;
+	//Based on which pin triggered the interrupt, row is assigned its correct value
 	switch(GPIO_Pin){
  8000586:	88fb      	ldrh	r3, [r7, #6]
  8000588:	f5b3 5f00 	cmp.w	r3, #8192	; 0x2000
@@ -439,35 +440,37 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  80005a4:	2b08      	cmp	r3, #8
  80005a6:	d003      	beq.n	80005b0 <HAL_GPIO_EXTI_Callback+0x34>
  80005a8:	e00b      	b.n	80005c2 <HAL_GPIO_EXTI_Callback+0x46>
-	case GPIO_PIN_2:
-		j = 2;
+		case GPIO_PIN_2:
+			row = 2;
  80005aa:	2302      	movs	r3, #2
  80005ac:	617b      	str	r3, [r7, #20]
-		break;
+			break;
  80005ae:	e008      	b.n	80005c2 <HAL_GPIO_EXTI_Callback+0x46>
-	case GPIO_PIN_3:
-		j = 3;
+		case GPIO_PIN_3:
+			row = 3;
  80005b0:	2303      	movs	r3, #3
  80005b2:	617b      	str	r3, [r7, #20]
-		break;
+			break;
  80005b4:	e005      	b.n	80005c2 <HAL_GPIO_EXTI_Callback+0x46>
-	case GPIO_PIN_12:
-		j = 0;
+		case GPIO_PIN_12:
+			row = 0;
  80005b6:	2300      	movs	r3, #0
  80005b8:	617b      	str	r3, [r7, #20]
-		break;
+			break;
  80005ba:	e002      	b.n	80005c2 <HAL_GPIO_EXTI_Callback+0x46>
-	case GPIO_PIN_13:
-		j = 1;
+		case GPIO_PIN_13:
+			row = 1;
  80005bc:	2301      	movs	r3, #1
  80005be:	617b      	str	r3, [r7, #20]
-		break;
+			break;
  80005c0:	bf00      	nop
 	}
+	//current time is acquired
 	uint32_t now = HAL_GetTick();
  80005c2:	f000 fb7f 	bl	8000cc4 <HAL_GetTick>
  80005c6:	6138      	str	r0, [r7, #16]
-	if(now - press_time[j][i]> 60)
+	//if difference between previous and current press time is > than 60ms, button has been pressed
+	if(now - press_time[row][column]> 60){
  80005c8:	4b17      	ldr	r3, [pc, #92]	; (8000628 <HAL_GPIO_EXTI_Callback+0xac>)
  80005ca:	681b      	ldr	r3, [r3, #0]
  80005cc:	4917      	ldr	r1, [pc, #92]	; (800062c <HAL_GPIO_EXTI_Callback+0xb0>)
@@ -479,8 +482,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  80005da:	1ad3      	subs	r3, r2, r3
  80005dc:	2b3c      	cmp	r3, #60	; 0x3c
  80005de:	d916      	bls.n	800060e <HAL_GPIO_EXTI_Callback+0x92>
-	{
-		int len = snprintf(buff, sizeof(buff),"%d \n", i + j*4);
+		//Button pressed! Print through UART the corresponding number
+		int len = snprintf(buff, sizeof(buff),"%d \n", column + row*4);
  80005e0:	697b      	ldr	r3, [r7, #20]
  80005e2:	009a      	lsls	r2, r3, #2
  80005e4:	4b10      	ldr	r3, [pc, #64]	; (8000628 <HAL_GPIO_EXTI_Callback+0xac>)
@@ -491,7 +494,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  80005ee:	4811      	ldr	r0, [pc, #68]	; (8000634 <HAL_GPIO_EXTI_Callback+0xb8>)
  80005f0:	f001 feba 	bl	8002368 <sniprintf>
  80005f4:	60f8      	str	r0, [r7, #12]
-		//send through UART the number of pushbutton pressed
 		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
  80005f6:	68fb      	ldr	r3, [r7, #12]
  80005f8:	b29a      	uxth	r2, r3
@@ -505,7 +507,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 			Error_Handler();
  800060a:	f000 f9c9 	bl	80009a0 <Error_Handler>
 	}
-	press_time[j][i] = now;
+	//assign current time to time matrix
+	press_time[row][column] = now;
  800060e:	4b06      	ldr	r3, [pc, #24]	; (8000628 <HAL_GPIO_EXTI_Callback+0xac>)
  8000610:	681b      	ldr	r3, [r3, #0]
  8000612:	4906      	ldr	r1, [pc, #24]	; (800062c <HAL_GPIO_EXTI_Callback+0xb0>)
@@ -536,15 +539,17 @@ int main(void)
  800063e:	b082      	sub	sp, #8
  8000640:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN 1 */
-	for(int h=0;h<3;h++){
+
+  //initialization of the time matrix
+  for(int h=0;h<3;h++){
  8000642:	2300      	movs	r3, #0
  8000644:	607b      	str	r3, [r7, #4]
  8000646:	e014      	b.n	8000672 <main+0x36>
-		for(int k=0;k<3;k++){
+	  for(int k=0;k<3;k++){
  8000648:	2300      	movs	r3, #0
  800064a:	603b      	str	r3, [r7, #0]
  800064c:	e00b      	b.n	8000666 <main+0x2a>
-			press_time[h][k]=-1;
+		  press_time[h][k]=-1;
  800064e:	4938      	ldr	r1, [pc, #224]	; (8000730 <main+0xf4>)
  8000650:	687b      	ldr	r3, [r7, #4]
  8000652:	009a      	lsls	r2, r3, #2
@@ -552,14 +557,14 @@ int main(void)
  8000656:	4413      	add	r3, r2
  8000658:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  800065c:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
-		for(int k=0;k<3;k++){
+	  for(int k=0;k<3;k++){
  8000660:	683b      	ldr	r3, [r7, #0]
  8000662:	3301      	adds	r3, #1
  8000664:	603b      	str	r3, [r7, #0]
  8000666:	683b      	ldr	r3, [r7, #0]
  8000668:	2b02      	cmp	r3, #2
  800066a:	ddf0      	ble.n	800064e <main+0x12>
-	for(int h=0;h<3;h++){
+  for(int h=0;h<3;h++){
  800066c:	687b      	ldr	r3, [r7, #4]
  800066e:	3301      	adds	r3, #1
  8000670:	607b      	str	r3, [r7, #4]
@@ -594,7 +599,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  switch(i){
+	  switch(column){
  8000688:	4b2a      	ldr	r3, [pc, #168]	; (8000734 <main+0xf8>)
  800068a:	681b      	ldr	r3, [r3, #0]
  800068c:	2b04      	cmp	r3, #4
@@ -660,7 +665,7 @@ int main(void)
  800070a:	f44f 6100 	mov.w	r1, #2048	; 0x800
  800070e:	480a      	ldr	r0, [pc, #40]	; (8000738 <main+0xfc>)
  8000710:	f000 fd9e 	bl	8001250 <HAL_GPIO_WritePin>
-	  		  i=-1;
+	  		  column=-1;
  8000714:	4b07      	ldr	r3, [pc, #28]	; (8000734 <main+0xf8>)
  8000716:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
  800071a:	601a      	str	r2, [r3, #0]
@@ -670,13 +675,13 @@ int main(void)
 	  HAL_Delay(10);
  800071e:	200a      	movs	r0, #10
  8000720:	f000 fadc 	bl	8000cdc <HAL_Delay>
-	  i++;
+	  column++;
  8000724:	4b03      	ldr	r3, [pc, #12]	; (8000734 <main+0xf8>)
  8000726:	681b      	ldr	r3, [r3, #0]
  8000728:	3301      	adds	r3, #1
  800072a:	4a02      	ldr	r2, [pc, #8]	; (8000734 <main+0xf8>)
  800072c:	6013      	str	r3, [r2, #0]
-	  switch(i){
+	  switch(column){
  800072e:	e7ab      	b.n	8000688 <main+0x4c>
  8000730:	200000c0 	.word	0x200000c0
  8000734:	200000bc 	.word	0x200000bc
