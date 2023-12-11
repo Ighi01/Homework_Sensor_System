@@ -1,18 +1,11 @@
-13:37:02 **** Incremental Build of configuration Debug for project HW09_1b ****
+17:50:20 **** Build of configuration Debug for project HW09_1b ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HW09_1b.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_09/HW09_1b/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HW09_1b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HW09_1b.elf
- 
 arm-none-eabi-size   HW09_1b.elf 
-arm-none-eabi-objdump -h -S  HW09_1b.elf  > "HW09_1b.list"
    text	   data	    bss	    dec	    hex	filename
   12996	    100	   2164	  15260	   3b9c	HW09_1b.elf
 Finished building: default.size.stdout
  
-Finished building: HW09_1b.list
- 
-13:37:05 **** Incremental Build of configuration Debug for project HW09_1a ****
+17:50:23 **** Build of configuration Debug for project HW09_1a ****
 make -j12 all 
 arm-none-eabi-size   HW09_1a.elf 
    text	   data	    bss	    dec	    hex	filename

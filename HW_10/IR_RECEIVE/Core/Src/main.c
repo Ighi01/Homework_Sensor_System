@@ -157,16 +157,17 @@ int main(void)
       }
 
       //start the timer and reset the flags
+      __HAL_TIM_SET_AUTORELOAD(&htim10, 420-1);
       HAL_TIM_Base_Start_IT(&htim10);
       UART_started_flag = 0;
       tim_elapsed = 0;
     }
 
-      /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-      /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
   }
-    /* USER CODE END 3 */
+  /* USER CODE END 3 */
 }
 
 /**
@@ -231,9 +232,9 @@ static void MX_TIM10_Init(void)
 
   /* USER CODE END TIM10_Init 1 */
   htim10.Instance = TIM10;
-  htim10.Init.Prescaler = 8400-1;
+  htim10.Init.Prescaler = 840-1;
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim10.Init.Period = 420-1;
+  htim10.Init.Period = 4200-1;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim10.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim10) != HAL_OK)
