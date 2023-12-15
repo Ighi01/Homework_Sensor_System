@@ -60,8 +60,8 @@ all: main-build
 main-build: IR_RECEIVE.elf secondary-outputs
 
 # Tool invocations
-IR_RECEIVE.elf IR_RECEIVE.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_10/IR_RECEIVE/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "IR_RECEIVE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_10/IR_RECEIVE/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_RECEIVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+IR_RECEIVE.elf IR_RECEIVE.map: $(OBJS) $(USER_OBJS) /home/lory/Scrivania/Homework_Sensor_System-main/HW_11/IR_RECEIVE_LED_MATRIX/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "IR_RECEIVE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/lory/Scrivania/Homework_Sensor_System-main/HW_11/IR_RECEIVE_LED_MATRIX/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_RECEIVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
