@@ -48,12 +48,18 @@ TIM_HandleTypeDef htim11;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int column = 1;
+uint8_t column = 0;
+uint8_t row = 0;
 uint32_t press_time[4][4];
 char buff[50];
 
 uint8_t transmittCounter = 0;
 char transmittPayload;
+
+uint8_t flag_pressed = 0;
+uint8_t tim10_elapsed = 0;
+uint8_t tim11_elapsed = 0;
+uint16_t gpio_pressed;
 
 /* USER CODE END PV */
 
@@ -70,20 +76,12 @@ static void MX_TIM10_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+//function for the transmission of the payload through the IR led
 int8_t Transmit_IR_UART(char payload){
 	if(transmittCounter == 0){
-
-
-		// we discard the LSB through the & operations, and append the parity bit in front through the or
-		//transmittPayload = (payload & 0b11111110) | checkParity(payload & 0b11111110);
 		transmittPayload = payload;
-		//transmittPayload = checkParity(payload & 0b11111110) | (payload >> 1);;
-
-		// send start bit
-		// Output goes low when modulated light is detected
-		/*if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3) != HAL_OK)
-			Error_Handler();
-*/
+		//set timer value for correct baud rate
 		__HAL_TIM_SET_AUTORELOAD(&htim11, 420-1);
 
 		if(HAL_TIM_Base_Start_IT(&htim11) != HAL_OK)
@@ -96,125 +94,19 @@ int8_t Transmit_IR_UART(char payload){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	int row;
-	//Based on which pin triggered the interrupt, row is assigned its correct value
-	switch(GPIO_Pin){
-		case GPIO_PIN_2:
-			row = 2;
-			break;
-		case GPIO_PIN_3:
-			row = 3;
-			break;
-		case GPIO_PIN_12:
-			row = 0;
-			break;
-		case GPIO_PIN_13:
-			row = 1;
-			break;
-	}
-	//current time is acquired
-	uint32_t now = HAL_GetTick();
-	//if difference between previous and current press time is > than 60ms, button has been pressed
-	if(now - press_time[row][column]> 60)
-	{
-		uint8_t data = (column + row*4)-1;
-
-		//Button pressed! Print through UART the corresponding number
-		int len = snprintf(buff, sizeof(buff),"%x \n", data);
-		if(HAL_UART_Transmit(&huart2, (uint8_t*) &buff, len, 100) != HAL_OK)
-			Error_Handler();
-
-
-		Transmit_IR_UART(data);
-	}
-	//assign current time to time matrix
-	press_time[row][column] = now;
-}
-
-//return 1 if there is an even number of 1s
-uint8_t checkParity(char payload){
-	// we shift the bits a few times to accumulate an XOR of all bits on the LSB position
-	// this bit is 0, if there is an even number of 1s
-	payload ^= payload >> 4;
-	payload ^= payload >> 2;
-	payload ^= payload >> 1;
-
-	// flip the payload, and keep only the LSB
-	return (~payload) & 1;
+	flag_pressed = 1;
+	gpio_pressed = GPIO_Pin;
 }
 
 
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
-/*	if(htim == &htim10){
-		//switch measured column
-		switch(column){
-			case 0:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
-			break;
-			case 1:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
-			break;
-			case 2:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 0);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1);
-			break;
-			case 3:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
-			break;
-			case 4:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
-				column=-1;
-			break;
-		}
-		column++;
+	if(htim == &htim10){
+		tim10_elapsed = 1;
 	}
-*/
+
 	if(htim == &htim11){
-		if(transmittCounter == 0){
-			if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3) != HAL_OK)
-				Error_Handler();
-			transmittCounter++;
-
-		}
-		else if(transmittCounter > 0){
-
-			//if the counter is 9, we send the stop bit and disable the timer
-			if(transmittCounter >= 9){
-
-				// send stop bit
-				// Output goes high when no modulated light is detected
-				if(HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3) != HAL_OK)
-					Error_Handler();
-
-				if(HAL_TIM_Base_Stop_IT(&htim11) != HAL_OK)
-					Error_Handler();
-
-				transmittCounter = 0;
-
-			}else{
-
-				// shift the payload, to have the transmitting bit at the LSB position
-				// then logic-and the result to get only the significant bit
-				// Output goes low when modulated light is detected
-				if((transmittPayload >> (transmittCounter-1)) & 0b00000001){
-					if(HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3) != HAL_OK)
-						Error_Handler();
-				}else{
-					if(transmittCounter >= 1 && ((transmittPayload >> (transmittCounter-2)) & 0b00000001)){
-						if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3) != HAL_OK)
-							Error_Handler();
-					}
-				}
-
-				transmittCounter++;
-			}
-
-		}
-
+		tim11_elapsed = 1;
 	}
-
 }
 
 /* USER CODE END 0 */
@@ -226,12 +118,12 @@ void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	 //initialization of the time matrix
-	 for(int h=0;h<3;h++){
-	  for(int k=0;k<3;k++){
-		  press_time[h][k]=-1;
-	  }
-  }
+	//initialization of the time matrix
+	for(int h=0;h<3;h++){
+		for(int k=0;k<3;k++){
+			press_time[h][k]=-1;
+		}
+	}
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -257,15 +149,9 @@ int main(void)
   MX_TIM11_Init();
   MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
+
   if(HAL_TIM_Base_Start_IT(&htim10)!= HAL_OK)
       	  Error_Handler();
-
-
-  //Transmit_IR_UART(0b11110000);
- // Transmit_IR_UART(column + row*4-1);
-  //Transmit_IR_UART('A');
-  //Transmit_IR_UART(0x41);
-
 
   /* USER CODE END 2 */
 
@@ -273,34 +159,104 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		//switch measured column
+	if(flag_pressed){
+		flag_pressed = 0;
+		//Based on which pin triggered the interrupt, row is assigned its correct value
+		switch(gpio_pressed){
+			case GPIO_PIN_2:
+				row = 2;
+			break;
+			case GPIO_PIN_3:
+				row = 3;
+			break;
+			case GPIO_PIN_12:
+				row = 0;
+			break;
+			case GPIO_PIN_13:
+				row = 1;
+			break;
+		}
+		//current time is acquired
+		uint32_t now = HAL_GetTick();
+		//if difference between previous and current press time is > than 60ms, button has been pressed
+		if(now - press_time[row][column]> 100){
+			uint8_t data = column + row*4;
+			//transmit the number of the button pressed
+			Transmit_IR_UART(data);
+		}
+		//assign current time to time matrix
+		press_time[row][column] = now;
+	}
+
+	if(tim10_elapsed){
+		//reset flag
+		tim10_elapsed = 0;
+		//switch detected column
 		switch(column){
+			case 2:
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
+				column++;
+			break;
 			case 3:
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
+				column = 0;
 			break;
-			case 4:
+			case 0:
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 1);
-				column = 0;
+				column++;
 			break;
 			case 1:
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, 0);
 				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1);
+				column++;
 			break;
-			case 2:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 0);
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
-
-			break;
-/*			case 4:
-				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
-			break;*/
 		}
+	}
 
-			column++;
+	if(tim11_elapsed){
+		//reset flag
+		tim11_elapsed = 0;
 
-		HAL_Delay(10);
+		if(transmittCounter == 0){
+			if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3) != HAL_OK)
+			Error_Handler();
+			transmittCounter++;
+		}
+		else if(transmittCounter > 0){
+		//if the counter is 9, we send the stop bit and disable the timer
+			if(transmittCounter >= 9){
+			// send stop bit
+			// Output goes high when no modulated light is detected
+			if(HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3) != HAL_OK)
+				Error_Handler();
+
+			if(HAL_TIM_Base_Stop_IT(&htim11) != HAL_OK)
+				Error_Handler();
+
+			transmittCounter = 0;
+
+		}else{
+			// shift the payload, to have the transmitting bit at the LSB position
+			// then logic-and the result to get only the significant bit
+			// Output goes low when modulated light is detected
+			if((transmittPayload >> (transmittCounter-1)) & 0b00000001){
+				if(HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3) != HAL_OK)
+					Error_Handler();
+				}else{
+				if(transmittCounter >= 1 && ((transmittPayload >> (transmittCounter-2)) & 0b00000001)){
+						if(HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3) != HAL_OK)
+							Error_Handler();
+						}
+				}
+
+				transmittCounter++;
+			}
+
+		}
+	}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -419,7 +375,7 @@ static void MX_TIM10_Init(void)
 
   /* USER CODE END TIM10_Init 1 */
   htim10.Instance = TIM10;
-  htim10.Init.Prescaler = 8400-1;
+  htim10.Init.Prescaler = 4800-1;
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim10.Init.Period = 100-1;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -523,7 +479,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PC13 PC2 PC3 PC12 */
   GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_12;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 

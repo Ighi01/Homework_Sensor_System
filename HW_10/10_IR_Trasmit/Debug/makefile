@@ -60,8 +60,8 @@ all: main-build
 main-build: 10_IR_Trasmit.elf secondary-outputs
 
 # Tool invocations
-10_IR_Trasmit.elf 10_IR_Trasmit.map: $(OBJS) $(USER_OBJS) /home/luca/STM32CubeIDE/workspace_1.13.1/10_IR_Trasmit/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "10_IR_Trasmit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/STM32CubeIDE/workspace_1.13.1/10_IR_Trasmit/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_IR_Trasmit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+10_IR_Trasmit.elf 10_IR_Trasmit.map: $(OBJS) $(USER_OBJS) /home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_10/10_IR_Trasmit/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "10_IR_Trasmit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/luca/Documents/Sensor_Projects/Homework_Sensor_System/HW_10/10_IR_Trasmit/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_IR_Trasmit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
