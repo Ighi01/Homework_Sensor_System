@@ -1,21 +1,14 @@
-18:13:10 **** Incremental Build of configuration Debug for project IR_RECEIVE ****
+16:22:04 **** Incremental Build of configuration Debug for project 10_IR_Trasmit ****
 make -j12 all 
-arm-none-eabi-size   IR_RECEIVE.elf 
+arm-none-eabi-size   10_IR_Trasmit.elf 
    text	   data	    bss	    dec	    hex	filename
-  13024	    100	   2052	  15176	   3b48	IR_RECEIVE.elf
+  13048	     20	   1932	  15000	   3a98	10_IR_Trasmit.elf
 Finished building: default.size.stdout
  
-18:13:14 **** Incremental Build of configuration Debug for project IR_RECEIVE ****
+16:22:12 **** Incremental Build of configuration Debug for project 10_IR_Trasmit ****
 make -j12 all 
-arm-none-eabi-size   IR_RECEIVE.elf 
+arm-none-eabi-size   10_IR_Trasmit.elf 
    text	   data	    bss	    dec	    hex	filename
-  13024	    100	   2052	  15176	   3b48	IR_RECEIVE.elf
-Finished building: default.size.stdout
- 
-18:16:17 **** Incremental Build of configuration Debug for project IR_RECEIVE ****
-make -j12 all 
-arm-none-eabi-size   IR_RECEIVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-  13024	    100	   2052	  15176	   3b48	IR_RECEIVE.elf
+  13048	     20	   1932	  15000	   3a98	10_IR_Trasmit.elf
 Finished building: default.size.stdout
  

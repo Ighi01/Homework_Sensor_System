@@ -1,10 +1,10 @@
-18:16:17 **** Incremental Build of configuration Debug for project IR_RECEIVE ****
+16:21:03 **** Incremental Build of configuration Debug for project IR_RECEIVE ****
 make -j12 all 
 arm-none-eabi-size   IR_RECEIVE.elf 
    text	   data	    bss	    dec	    hex	filename
-  13024	    100	   2052	  15176	   3b48	IR_RECEIVE.elf
+  22112	    304	   2384	  24800	   60e0	IR_RECEIVE.elf
 Finished building: default.size.stdout
  
 
-18:16:18 Build Finished. 0 errors, 0 warnings. (took 672ms)
+16:21:03 Build Finished. 0 errors, 0 warnings. (took 681ms)
 

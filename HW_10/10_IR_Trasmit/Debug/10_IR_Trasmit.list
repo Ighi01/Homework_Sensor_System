@@ -368,12 +368,10 @@ int8_t Transmit_IR_UART(char payload){
  80004dc:	781b      	ldrb	r3, [r3, #0]
  80004de:	2b00      	cmp	r3, #0
  80004e0:	d115      	bne.n	800050e <Transmit_IR_UART+0x3e>
-
 		transmittPayload = payload;
  80004e2:	4a0f      	ldr	r2, [pc, #60]	; (8000520 <Transmit_IR_UART+0x50>)
  80004e4:	79fb      	ldrb	r3, [r7, #7]
  80004e6:	7013      	strb	r3, [r2, #0]
-
 		//set timer value for correct baud rate
 		__HAL_TIM_SET_AUTORELOAD(&htim11, 420-1);
  80004e8:	4b0e      	ldr	r3, [pc, #56]	; (8000524 <Transmit_IR_UART+0x54>)
